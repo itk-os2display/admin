@@ -1,0 +1,15 @@
+---
+class: Indholdskanalen\MainBundle\Entity\User
+
+defaults:
+  enabled: true
+
+entities:
+  -
+    email: admin@example.com
+    plain_password: admin
+    roles: [ROLE_SUPER_ADMIN]
+  -
+    email: user@example.com
+    plain_password: user
+    roles: [ROLE_USER]

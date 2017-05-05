@@ -1,0 +1,8 @@
+---
+class: Indholdskanalen\MainBundle\Entity\Group
+
+entities:
+  -
+    title: Group 1
+  -
+    title: Group 2

@@ -1,0 +1,7 @@
+---
+class: Indholdskanalen\MainBundle\Entity\UserGroup
+
+entities:
+  -
+    @user: { email: user@example.com }
+    @group: { title: Group 1 }
