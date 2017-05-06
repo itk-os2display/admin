@@ -5,3 +5,9 @@ entities:
   -
     @user: { email: user@example.com }
     @group: { title: Group 1 }
+    role: ROLE_GROUP_ROLE_ADMIN
+
+  -
+    @user: { email: user@example.com }
+    @group: { title: Group 2 }
+    role: ROLE_GROUP_ROLE_USER

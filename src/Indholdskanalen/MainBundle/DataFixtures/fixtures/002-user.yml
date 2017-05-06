@@ -6,10 +6,22 @@ defaults:
 
 entities:
   -
-    email: admin@example.com
-    plain_password: admin
+    email: super-admin@example.com
+    plain_password: password
     roles: [ROLE_SUPER_ADMIN]
   -
+    email: admin@example.com
+    plain_password: password
+    roles: [ROLE_ADMIN]
+  -
+    email: group-admin@example.com
+    plain_password: password
+    roles: [ROLE_GROUP_ADMIN]
+  -
+    email: user-admin@example.com
+    plain_password: password
+    roles: [ROLE_USER_ADMIN]
+  -
     email: user@example.com
-    plain_password: user
+    plain_password: password
     roles: [ROLE_USER]
