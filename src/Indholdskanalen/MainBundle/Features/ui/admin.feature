@@ -1,13 +1,14 @@
+@ui @admin
 Feature: admin
   In order to …
   As a client …
   I need to be able to …
 
-  Background:
-    Given the following users exist:
-      | username | password | roles            |
-      | admin    | admin    | ROLE_SUPER_ADMIN |
-      | user     | user     | ROLE_USER        |
+  # Background:
+  #   Given the following users exist:
+  #     | username | password | roles            |
+  #     | admin    | admin    | ROLE_SUPER_ADMIN |
+  #     | user     | user     | ROLE_USER        |
 
   @createSchema
   @javascript
@@ -15,8 +16,8 @@ Feature: admin
     When I go to "/"
     Then I should be on "/login"
 
-    When I fill in "_username" with "admin"
-    And  fill in "_password" with "admin"
+    When I fill in "_username" with "admin@example.com"
+    And  fill in "_password" with "password"
     And  press "_submit"
     Then I should be on "/#/channel-overview"
 

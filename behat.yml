@@ -27,6 +27,21 @@ default:
       filters:
         tags: @api
 
+    ui_features:
+      mink_session: default
+      mink_javascript_session: selenium2
+      type: symfony_bundle
+      bundle: IndholdskanalenMainBundle
+      paths: [src/Indholdskanalen/MainBundle/Features/ui/]
+      contexts:
+        - Indholdskanalen\MainBundle\Features\Context\FeatureContext: ["@doctrine"]
+        # FeatureContext extends MinkContext
+        - Behat\MinkExtension\Context\MinkContext
+        - behatch:context:rest
+        - behatch:context:json
+      filters:
+        tags: @ui
+
   extensions:
     Behat\Symfony2Extension:
       kernel:
