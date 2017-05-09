@@ -3,44 +3,92 @@
  * Controller for the admin user page.
  */
 
-angular.module('adminApp').controller('AdminUserController', ['busService', '$scope', '$timeout', 'ModalService', '$routeParams', '$location', '$controller',
+angular.module('adminApp').controller('AdminUserController', [
+  'busService', '$scope', '$timeout', 'ModalService', '$routeParams', '$location', '$controller',
   function (busService, $scope, $timeout, ModalService, $routeParams, $location, $controller) {
     'use strict';
 
     // Extend BaseApiController.
-    $controller('BaseApiController', { $scope: $scope });
+    $controller('BaseApiController', {$scope: $scope});
+
+    var userRoles;
 
     $scope.user = null;
+    $scope.userRoles = [];
     $scope.loading = true;
     $scope.forms = {};
 
-    // If id set, request that user, else use baseCurrentUser (from BaseController).
-    if ($routeParams.id) {
-      $scope.getEntity('user', { id: $routeParams.id }).then(
-        function success(user) {
-          $scope.user = user;
-        },
-        function error(err) {
-          busService.$emit('log.error', {
-            timeout: 5000,
-            cause: err.code,
-            msg: 'Brugeren kan ikke findes.'
-          });
+    /**
+     * Set user on scope.
+     *
+     * @param user
+     */
+    function setUser(user) {
+      $scope.user = user;
+      $scope.userHeading = $scope.user.firstname ? $scope.user.firstname + ' ' + $scope.user.lastname : $scope.user.email;
+    }
 
-          // Redirect to dashboard.
-          $location.path('/admin');
-        }
-      ).then(function () {
+    // Load roles, then load user.
+    $scope.baseApiRequest('get', '/api/user/roles').then(
+      function (roles) {
+        userRoles = roles;
+      }
+    ).then(function () {
+      // If id set, request that user, else use baseCurrentUser (from BaseController).
+      if ($routeParams.id) {
+        $scope.getEntity('user', {id: $routeParams.id}).then(
+          function success(user) {
+            $timeout(function () {
+              setUser(user);
+
+              for (var role in $scope.user.roles) {
+                addRole($scope.user.roles[role]);
+              }
+            });
+          },
+          function error(err) {
+            busService.$emit('log.error', {
+              timeout: 5000,
+              cause: err.code,
+              msg: 'Brugeren kan ikke findes.'
+            });
+
+            // Redirect to dashboard.
+            $location.path('/admin');
+          }
+        ).then(function () {
+          $scope.loading = false;
+        });
+      }
+      else {
+        // Get user from BaseController.
+        setUser($scope.baseCurrentUser);
+
+        // Remove spinner.
         $scope.loading = false;
-      });
-    }
-    else {
-      // Get user from BaseController.
-      $scope.user = $scope.baseCurrentUser;
 
-      // Remove spinner.
-      $scope.loading = false;
-    }
+        for (var role in $scope.user.roles) {
+          addRole($scope.user.roles[role]);
+        }
+      }
+    });
+
+    /**
+     * Adds role to userRoles.
+     *
+     * @param role
+     */
+    var addRole = function addRole(role) {
+      var newRole = {
+        id: role,
+        title: userRoles[role] ? userRoles[role] : role
+      };
+      $scope.userRoles.push(newRole);
+    };
+
+    $scope.removeRoleFromUser = function removeRole(role) {
+      alert('not implemented!');
+    };
 
     /**
      * Submit form.
@@ -64,7 +112,7 @@ angular.module('adminApp').controller('AdminUserController', ['busService', '$sc
 
       $scope.updateEntity('user', $scope.user).then(
         function success(user) {
-          $scope.user = user;
+          setUser(user);
 
           // Display message success.
           busService.$emit('log.info', {
@@ -75,7 +123,7 @@ angular.module('adminApp').controller('AdminUserController', ['busService', '$sc
         function error(err) {
           // Display message success.
           busService.$emit('log.error', {
-            cause: result.error.code,
+            cause: err.code,
             msg: 'Bruger kunne ikke opdateres.'
           });
         }

@@ -13,9 +13,14 @@
                    class="forms-base forms-text" required>
           </div>
         </article>
-        <!-- @TODO: create this in styleguide -->
         <article class="grid--item" ng-if="errors.length > 0">
-          <p style="color: red" class="popup--error" ng-repeat="error in errors">{{ error }}</p>
+          <div class="message">
+            <div class="message--inner is-inline-error">
+              <div class="message--content">
+                <p ng-repeat="error in errors">{{ error }}</p>
+              </div>
+            </div>
+          </div>
         </article>
       </div>
     </div>
@@ -27,7 +32,7 @@
         </article>
         <article class="grid--item">
           <a type="submit" class="button-link " title="Tilføj gruppe" ng-click="submitForm(forms.groupCreateForm)"
-             ng-if="canCreate('group')">Tilføj gruppe</a>
+             ng-if="baseCanCreate('group')">Tilføj gruppe</a>
         </article>
       </div>
     </div>
