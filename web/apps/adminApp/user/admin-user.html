@@ -48,11 +48,17 @@
     <article class="grid--item">
       <box heading="Grupper">
         <content-list items="user.groups"></content-list>
+        <span ng-if="user.groups.length === 0">Brugeren er ikke med i nogen gruppe</span>
       </box>
     </article>
     <article class="grid--item">
       <box heading="Roller">
+        <div class="button-icon-link has-spacing-after" ng-click="showAddRoleModal()" ng-if="baseCanUpdate(user)">
+          <i class="icon-rounded material-icons">security</i>
+          <span class="button-text has-spacing-before">Tilføj rolle</span>
+        </div>
         <content-list items="userRoles"></content-list>
+        <span ng-if="userRoles.length === 0">Brugeren har ingen roller</span>
       </box>
     </article>
   </div>
