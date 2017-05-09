@@ -4,5 +4,12 @@ class: Indholdskanalen\MainBundle\Entity\Slide
 entities:
   -
     title: Slide 1
+    template: text-top
+    created_at: 2001-01-01 # @now
+    modified_at: 2001-01-01 # @now
+
+  -
+    title: Slide 2
+    template: text-top
     created_at: 2001-01-01 # @now
     modified_at: 2001-01-01 # @now
