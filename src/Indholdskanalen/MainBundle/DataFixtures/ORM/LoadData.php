@@ -19,7 +19,7 @@ class LoadData extends ContainerAwareFixture {
     $filePaths = glob(__DIR__ . '/../fixtures/*.yml');
 
     foreach ($filePaths as $path) {
-      echo $path, PHP_EOL;
+      $this->info($path);
 
       $data = Yaml::parse($path);
 
@@ -65,12 +65,12 @@ class LoadData extends ContainerAwareFixture {
           $accessor->setValue($entity, $property, $value);
         }
         else {
-          echo 'Warning: Unknown property: ' . $property . ' (' . get_class($entity) . ')', PHP_EOL;
+          $this->warning('Unknown property: ' . $property . ' (' . get_class($entity) . ')');
         }
       }
       $this->persistEntity($entity);
 
-      echo get_class($entity) . '#' . $entity->getId(), PHP_EOL;
+      $this->info(get_class($entity) . '#' . $entity->getId());
     }
   }
 
@@ -83,6 +83,13 @@ class LoadData extends ContainerAwareFixture {
     }
 
     return $entity;
+  }
+
+  private function info($message, $newline = TRUE) {
+    fwrite(STDOUT, $message);
+    if ($newline) {
+      fwrite(STDOUT, PHP_EOL);
+    }
   }
 
   private function warning($message, $newline = TRUE) {
