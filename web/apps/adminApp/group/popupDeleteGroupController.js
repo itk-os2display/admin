@@ -3,17 +3,15 @@
  * Controller for the popup: create group.
  */
 
-angular.module('adminApp').controller('PopupCreateGroup', [
-  'busService', '$scope', '$timeout', 'close', '$controller',
-  function (busService, $scope, $timeout, close, $controller) {
+angular.module('adminApp').controller('PopupDeleteGroup', [
+  'busService', '$scope', '$timeout', 'close', '$controller', 'group',
+  function (busService, $scope, $timeout, close, $controller, group) {
     'use strict';
 
     // Extend BaseController.
     $controller('BaseApiController', {$scope: $scope});
 
-    $scope.group = {
-      title: ""
-    };
+    $scope.group = group;
     $scope.loading = false;
     $scope.errors = [];
     $scope.forms = {};
@@ -37,35 +35,24 @@ angular.module('adminApp').controller('PopupCreateGroup', [
 
       $scope.errors = [];
 
-      if (form.$invalid) {
-        $scope.errors.push("Ugyldig input");
-
-        return;
-      }
-
       $scope.loading = true;
 
-      $scope.createEntity('group', $scope.group).then(
-        function success(group) {
+      $scope.deleteEntity('group', $scope.group).then(
+        function success() {
           // Display message success.
           busService.$emit('log.info', {
             timeout: 5000,
-            msg: 'Gruppen blev oprettet'
+            msg: 'Gruppen blev slettet'
           });
 
-          close(group);
+          close($scope.group);
         },
         function error(err) {
-          if (err.code === 409) {
-            $scope.errors.push('Gruppen eksisterer allerede');
-          }
-          else {
-            $scope.errors.push('Kunne ikke oprette gruppen');
-          }
+          $scope.errors.push(err.message);
         }
       ).then(function () {
         $scope.loading = false;
-      });
+      })
     };
   }
 ]);

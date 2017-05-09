@@ -3,48 +3,77 @@
  * Controller for the admin groups page.
  */
 
-angular.module('adminApp').controller('AdminGroupsController', ['busService', '$scope', '$timeout', 'ModalService', '$controller',
+angular.module('adminApp').controller('AdminGroupsController', [
+  'busService', '$scope', '$timeout', 'ModalService', '$controller',
   function (busService, $scope, $timeout, ModalService, $controller) {
     'use strict';
 
     // Extend BaseController.
-    $controller('BaseController', { $scope: $scope });
+    $controller('BaseApiController', {$scope: $scope});
 
     $scope.groupsLoading = true;
     $scope.groups = null;
-    $scope.max = 50;
+    $scope.max = null;
 
     /**
      * Add a group to the groups array.
+     *
      * @param group
+     *   The group to add.
      */
     function addGroup(group) {
+      var actions = [];
+
+      if ($scope.canRead(group)) {
+        actions.push({
+          url: '#/admin/group/' + group.id,
+          title: 'Se gruppe'
+        });
+      }
+      if ($scope.canUpdate(group)) {
+        actions.push({
+          url: '#/admin/group/' + group.id,
+          title: 'Rediger gruppe'
+        });
+      }
+      if ($scope.canDelete(group)) {
+        actions.push({
+          click: $scope.deleteGroup,
+          entity: group,
+          title: 'Slet gruppe'
+        });
+      }
+
+      // Add group.
       $scope.groups.push({
         id: group.id,
         url: '#/admin/group/' + group.id,
-        title: group.title
+        title: group.title,
+        actions: actions
       });
     }
 
     /**
-     * returnGroups listener.
-     * @type {*}
+     * Remove a group to the groups array.
+     *
+     * @param group
+     *   The group to remove.
      */
-    var cleanupGetGroupsListener = busService.$on('AdminGroupsController.returnGroups', function (event, result) {
+    function removeGroup(group) {
       $timeout(function () {
-        if (result.error) {
-          // Display message success.
-          busService.$emit('log.error', {
-            cause: result.error.code,
-            msg: 'Grupper kunne ikke hentes.'
-          });
+        var findGroup = $scope.groups.findIndex(function (element, index, array) {
+          return element.id === group.id;
+        });
 
-          // Remove spinner.
-          $scope.groupsLoading = false;
-
-          return;
+        if (findGroup) {
+          $scope.groups.splice(findGroup, 1);
         }
+      });
+    }
 
+    // Get the groups.
+    $scope.getEntities('group').then(
+      function success(result) {
         $scope.groups = [];
 
         for (var group in result) {
@@ -52,25 +81,28 @@ angular.module('adminApp').controller('AdminGroupsController', ['busService', '$
             addGroup(result[group]);
           }
         }
-
-        $scope.groupsLoading = false;
-      });
+      },
+      function error(err) {
+        busService.$emit('log.error', {
+          timeout: 5000,
+          cause: err.code,
+          msg: 'Grupper kan ikke findes.'
+        });
+      }
+    ).then(function () {
+      $scope.groupsLoading = false;
     });
 
-    // Get groups.
-    busService.$emit('apiService.getEntities', {
-      type: 'group',
-      returnEvent: 'AdminGroupsController.returnGroups'
-    });
-
-    // Show create group modal.
+    /**
+     * Show create group modal.
+     */
     $scope.createGroup = function () {
-      // Just provide a template url, a controller and call 'showModal'.
+      // Show modal.
       ModalService.showModal({
-        templateUrl: "apps/adminApp/groups/popup-create-group.html",
+        templateUrl: "apps/adminApp/group/popup-create-group.html",
         controller: "PopupCreateGroup"
-      }).then(function(modal) {
-        modal.close.then(function(group) {
+      }).then(function (modal) {
+        modal.close.then(function (group) {
           if (group) {
             addGroup(group);
           }
@@ -79,12 +111,23 @@ angular.module('adminApp').controller('AdminGroupsController', ['busService', '$
     };
 
     /**
-     * on destroy.
-     *
-     * Clean up listeners.
+     * Show delete group modal.
      */
-    $scope.$on('$destroy', function destroy() {
-      cleanupGetGroupsListener();
-    });
+    $scope.deleteGroup = function (group) {
+      // Show modal.
+      ModalService.showModal({
+        templateUrl: "apps/adminApp/group/popup-delete-group.html",
+        controller: "PopupDeleteGroup",
+        inputs: {
+          group: group
+        }
+      }).then(function (modal) {
+        modal.close.then(function (group) {
+          if (group) {
+            removeGroup(group);
+          }
+        });
+      });
+    };
   }
 ]);
