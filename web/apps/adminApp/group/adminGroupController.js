@@ -91,7 +91,7 @@ angular.module('adminApp').controller('AdminGroupController', [
                 var roleName = groupRoles[roleId];
 
                 actions.push({
-                  title: 'Sæt gruppe role: ' + roleName,
+                  title: 'Sæt grupperolle: ' + roleName,
                   click: $scope.setRoleToUser,
                   entity: {
                     user: user,
@@ -119,7 +119,7 @@ angular.module('adminApp').controller('AdminGroupController', [
           $scope.users.push({
             id: user.id,
             url: '#/admin/user/' + user.id,
-            title: user.firstname ? user.firstname + (user.lastname ? " " + user.lastname : '') : user.username,
+            title: user.displayName,
             actions: actions,
             text: text
           });
@@ -141,7 +141,6 @@ angular.module('adminApp').controller('AdminGroupController', [
         function success(group) {
           // Update the group with data from database.
           $scope.group = group;
-          $scope.groupHeading = group.title + "";
 
           $scope.users = [];
 
@@ -207,7 +206,6 @@ angular.module('adminApp').controller('AdminGroupController', [
         function success(result) {
           // Update the group with data from database.
           $scope.group = result;
-          $scope.groupHeading = result.title + "";
 
           // Remove spinner.
           $scope.loading = false;
