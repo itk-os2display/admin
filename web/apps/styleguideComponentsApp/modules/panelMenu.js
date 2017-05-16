@@ -27,10 +27,13 @@ angular.module('styleguideComponentsApp').directive('panelMenu', ['$document', f
         '<span class="content-list-item--icon" ng-click="toggleMenu()">' +
           '<i class="icon-default material-icons">more_vert</i>' +
         '</span>' +
+        '<div class="panel-menu--overlay" ng-click="toggleMenu()" ng-if="menuOpen"></div>' +
         '<div class="panel-menu is-positioned" ng-class="{\'is-hidden\': !menuOpen}">' +
-          '<box>' +
-            '<content-list items="items" ng-click="menuOpen = false"></content-list>' +
-          '</box>' +
+          '<div class="panel-menu--inner">' +
+            '<box>' +
+              '<content-list items="items" ng-click="menuOpen = false"></content-list>' +
+            '</box>' +
+          '</div>' +
         '</div>' +
       '</div>'
   }
