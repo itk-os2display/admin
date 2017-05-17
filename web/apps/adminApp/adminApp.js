@@ -3,9 +3,20 @@
  * Sets up the Admin App.
  */
 
-// Configure routing
-angular.module('adminApp').config(function ($routeProvider) {
+// Configure routing and translations.
+angular.module('adminApp').config(['$routeProvider', '$translateProvider', function ($routeProvider, $translateProvider) {
   'use strict';
+
+  // Set up translations.
+  $translateProvider
+  .useSanitizeValueStrategy('escape')
+  .useStaticFilesLoader({
+    prefix: 'apps/adminApp/translations/locale-',
+    suffix: '.json'
+  })
+  .preferredLanguage('da')
+  .fallbackLanguage('da')
+  .forceAsyncReload(true);
 
   // Register routes
   $routeProvider
@@ -37,7 +48,7 @@ angular.module('adminApp').config(function ($routeProvider) {
     templateUrl: 'apps/adminApp/group/admin-group.html?' + window.config.version
   })
   ;
-});
+}]);
 
 // Setup the app.
 //  - submenu items.
@@ -52,22 +63,19 @@ angular.module('adminApp').service('adminAppSetup', [
 
     // Register listener for requests for Main Menu items
     busService.$on('menuApp.requestMainMenuItems', function requestMainMenuItems(event, args) {
-      // Get user. Assert has permission to this menu item.
-      userService.getCurrentUser().then(
-        function (user) {
-          if (user.is_admin) {
-            busService.$emit('menuApp.returnMainMenuItems', [
-              {
-                title: "Admin",
-                route: '/#/admin',
-                activeFilter: '/admin',
-                icon: 'picture_in_picture',
-                weight: 5
-              }
-            ]);
+      var user = userService.getCurrentUser();
+
+      if (user.is_admin) {
+        busService.$emit('menuApp.returnMainMenuItems', [
+          {
+            title: "Admin",
+            route: '/#/admin',
+            activeFilter: '/admin',
+            icon: 'picture_in_picture',
+            weight: 5
           }
-        }
-      );
+        ]);
+      }
     });
 
     // Listen for sub menu requests

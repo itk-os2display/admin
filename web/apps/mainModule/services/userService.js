@@ -1,55 +1,33 @@
 /**
  * User service.
  */
-angular.module('mainModule').service('userService', ['busService', '$http', '$q',
-  function (busService, $http, $q) {
+angular.module('mainModule').service('userService', [
+  'busService',
+  function (busService) {
     'use strict';
 
-    var currentUser;
+    // Get
+    var currentUser = OS2DISPLAY_CURRENT_USER;
 
     /**
-     * Get current user promise.
+     * Get the current user.
      *
-     * @return {HttpPromise}
+     * @return object
      */
     var getCurrentUser = function getCurrentUser() {
-      var deferred = $q.defer();
-
-      if (currentUser) {
-        deferred.resolve(currentUser);
-      }
-      else {
-        $http.get('/api/user/current')
-        .success(function (data) {
-          currentUser = data;
-          deferred.resolve(currentUser);
-        })
-        .error(function (response) {
-
-        });
-      }
-
-      return deferred.promise;
+      return currentUser;
     };
 
     /**
      * Get current user event listener.
      */
     busService.$on('userService.getCurrentUser', function requestUser(event, args) {
-      getCurrentUser().then(
-        function (user) {
-          busService.$emit('userService.returnCurrentUser', user);
-        },
-        function (err) {
-          busService.$emit('log.error', {
-            'cause': err,
-            'msg': 'Bruger kunne ikke hentes'
-          });
-        }
-      )
+      var user = getCurrentUser();
+
+      busService.$emit('userService.returnCurrentUser', user);
     });
 
-
+    // Expose methods.
     this.getCurrentUser = getCurrentUser;
   }
 ]);
