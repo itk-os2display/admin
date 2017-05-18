@@ -11,8 +11,8 @@
  * Emits the 'mediaUpload.uploadComplete' event for a parent controller to catch.
  *   Catch this event to handle when the upload is complete.
  */
-angular.module('ikApp').directive('ikMediaUpload', [
-  function () {
+angular.module('ikApp').directive('ikMediaUpload', ['busService', 'userService',
+  function (busService, userService) {
     'use strict';
 
     return {
@@ -27,6 +27,14 @@ angular.module('ikApp').directive('ikMediaUpload', [
         $scope.uploadErrors = false;
         $scope.uploadInProgress = false;
         $scope.uploadErrorText = '';
+
+        // Get current user groups.
+        var cleanupGetCurrentUserGroups = busService.$on('mediaUpdateDirective.getCurrentUserGroups', function (event, groups) {
+          $scope.userGroups = groups;
+        });
+        userService.getCurrentUserGroups('mediaUpdateDirective.getCurrentUserGroups');
+
+        $scope.selectedGroups = [];
 
         var acceptedVideotypes = '|mp4|x-msvideo|x-ms-wmv|quicktime|mpeg|mpg|x-matroska|ogg|webm';
         var acceptedImagetypes = '|jpg|png|jpeg|bmp|gif';
@@ -87,6 +95,20 @@ angular.module('ikApp').directive('ikMediaUpload', [
 
         $scope.upload = function upload() {
           $scope.uploadInProgress = true;
+
+          // Get group ids.
+          var groupIds = [];
+          for (var group in $scope.selectedGroups) {
+            group = $scope.selectedGroups[group];
+            groupIds.push(group.id);
+          }
+
+          // Set groups for each item.
+          for (var item in $scope.uploader.queue) {
+            item = $scope.uploader.queue[item];
+            item.formData[0].groups = JSON.stringify(groupIds);
+          }
+
           $scope.uploader.uploadAll();
         };
 
@@ -176,6 +198,13 @@ angular.module('ikApp').directive('ikMediaUpload', [
             queue: $scope.uploader.queue
           });
         };
+
+        /**
+         * onDestroy.
+         */
+        $scope.$on('$destory', function () {
+          cleanupGetCurrentUserGroups();
+        });
       },
       link: function () {
       },

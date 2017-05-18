@@ -10,6 +10,7 @@ use FOS\UserBundle\Doctrine\UserManager as FOSUserManager;
 use FOS\UserBundle\Util\TokenGeneratorInterface;
 use Indholdskanalen\MainBundle\Entity\User;
 use Indholdskanalen\MainBundle\Exception\DuplicateEntityException;
+use Indholdskanalen\MainBundle\Exception\ValidationException;
 
 /**
  * Class UserManager
@@ -22,6 +23,7 @@ class UserManager {
   protected $mailerService;
   protected $entityService;
   protected $tokenGenerator;
+  protected $securityMananager;
 
   /**
    * UserManager constructor.
@@ -29,11 +31,12 @@ class UserManager {
    * @param \FOS\UserBundle\Doctrine\UserManager $userManager
    * @param \Indholdskanalen\MainBundle\Services\UserMailerService $mailerService
    */
-  public function __construct(FOSUserManager $userManager, UserMailerService $mailerService, EntityService $entityService, TokenGeneratorInterface $tokenGenerator) {
+  public function __construct(FOSUserManager $userManager, UserMailerService $mailerService, EntityService $entityService, TokenGeneratorInterface $tokenGenerator, SecurityManager $securityManager) {
     $this->userManager = $userManager;
     $this->mailerService = $mailerService;
     $this->entityService = $entityService;
     $this->tokenGenerator = $tokenGenerator;
+    $this->securityMananager = $securityManager;
   }
 
   /**
@@ -47,6 +50,7 @@ class UserManager {
     // Create user object.
     $user = $this->userManager->createUser();
 
+    $data = $this->normalizeData($data);
     $this->entityService->setValues($user, $data, self::$editableProperties);
 
     $user->setUsername($user->getEmail());
@@ -80,6 +84,7 @@ class UserManager {
    * @throws \Indholdskanalen\MainBundle\Exception\DuplicateEntityException
    */
   public function updateUser(User $user, $data) {
+    $data = $this->normalizeData($data);
     $this->entityService->setValues($user, $data, self::$editableProperties);
 
     $user->setUsername($user->getEmail());
@@ -94,6 +99,25 @@ class UserManager {
     $this->userManager->updateUser($user);
 
     return $user;
+  }
+
+  private function normalizeData(array $data) {
+    if (isset($data['roles'])) {
+      if ($this->isAssoc($data['roles'])) {
+        $data['roles'] = array_keys($data['roles']);
+      }
+
+      if (!$this->securityMananager->canAssignRoles($data['roles'])) {
+        throw new ValidationException('Invalid roles', $data['roles']);
+      }
+    }
+
+    return $data;
+  }
+
+  private function isAssoc(array $arr) {
+    if (array() === $arr) return false;
+    return array_keys($arr) !== range(0, count($arr) - 1);
   }
 
 }

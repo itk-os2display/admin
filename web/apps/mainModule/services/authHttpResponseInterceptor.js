@@ -18,7 +18,10 @@ angular.module('mainModule').service('authHttpResponseInterceptor', [
     this.responseError = function (rejection) {
       if (rejection.status === 401) {
         $window.location.href = "/logout";
+        return;
       }
+
+      return $q.reject(rejection);
     };
   }
 ]);
