@@ -2,7 +2,10 @@
 
 namespace Indholdskanalen\MainBundle\DataFixtures\ORM;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Persistence\ObjectManager;
+use Indholdskanalen\MainBundle\Entity\Group;
+use Indholdskanalen\MainBundle\Entity\GroupableEntity;
 use Indholdskanalen\MainBundle\Entity\User;
 use Symfony\Bridge\Doctrine\Tests\Fixtures\ContainerAwareFixture;
 use Symfony\Component\Yaml\Yaml;
@@ -60,6 +63,8 @@ class LoadData extends ContainerAwareFixture {
           $metadata = $this->manager->getClassMetadata(get_class($entity));
           $targetClass = $metadata->getAssociationTargetClass($property);
           $value = $this->getEntity($targetClass, $value);
+        } elseif ($entity instanceof GroupableEntity && $property === 'groups') {
+          $value = $this->getGroups($value);
         }
         if ($accessor->isWritable($entity, $property)) {
           $accessor->setValue($entity, $property, $value);
@@ -72,6 +77,15 @@ class LoadData extends ContainerAwareFixture {
 
       $this->info(get_class($entity) . '#' . $entity->getId());
     }
+  }
+
+  private function getGroups(array $items) {
+    $groups = new ArrayCollection();
+    foreach ($items as $criteria) {
+      $groups->add($this->getEntity(Group::class, $criteria));
+    }
+
+    return $groups;
   }
 
   private function getEntity($class, $criteria) {
