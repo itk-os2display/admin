@@ -1,0 +1,27 @@
+---
+class: Indholdskanalen\MainBundle\Entity\Screen
+
+entities:
+  -
+    title: Screen 1
+    description: The first screen
+    template:
+      id: full-screen
+    token: ZJDySn5oQ4
+    activation_code: ZJDySn5oQ4
+    created_at: 2001-01-01 # @now
+    modified_at: 2001-01-01 # @now
+    groups:
+      - { title: Group 1 }
+
+  -
+    title: Screen 2
+    description: The second screen
+    template:
+      id: full-screen
+    token: sY236CRT1q
+    activation_code: sY236CRT1q
+    created_at: 2001-01-01 # @now
+    modified_at: 2001-01-01 # @now
+    groups:
+      - { title: Group 2 }

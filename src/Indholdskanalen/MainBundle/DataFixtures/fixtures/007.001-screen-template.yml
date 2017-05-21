@@ -1,0 +1,18 @@
+---
+class: Indholdskanalen\MainBundle\Entity\ScreenTemplate
+
+defaults:
+    enabled: 1
+
+entities:
+  -
+    id: full-screen
+    name: Full screen
+    path_icon: https://admin.os2display.vm/templates/default_templates/screens/full-screen/full-screen.png
+    path_live: https://admin.os2display.vm/templates/default_templates/screens/full-screen/full-screen-live.html?1493123100
+    path_edit: https://admin.os2display.vm/templates/default_templates/screens/full-screen/full-screen-edit.html?1493123100
+    path_css: https://admin.os2display.vm/templates/default_templates/screens/full-screen/full-screen.css?1493123100
+    path: https://admin.os2display.vm/templates//default_templates/screens/full-screen
+    tools:
+      - {}
+    orientation: landscape

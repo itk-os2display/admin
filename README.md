@@ -65,3 +65,19 @@ Run only tests with a specific tag:
 ```
 ./vendor/behat/behat/bin/behat --suite=api_features --tags=group
 ```
+
+
+# Fixtures
+
+```
+app/console doctrine:migrations:migrate first
+app/console doctrine:migrations:migrate
+app/console doctrine:fixtures:load
+```
+
+```
+app/console doctrine:migrations:migrate --quiet --no-interaction first \
+	&& app/console doctrine:migrations:migrate --quiet --no-interaction \
+	&& app/console doctrine:fixtures:load --no-interaction
+app/console ik:reindex
+```

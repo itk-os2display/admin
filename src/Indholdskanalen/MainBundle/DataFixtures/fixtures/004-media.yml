@@ -1,0 +1,20 @@
+---
+class: Application\Sonata\MediaBundle\Entity\Media
+
+defaults:
+  provider_name: sonata.media.provider.image
+  provider_status: 1
+  media_type: image
+
+entities:
+  -
+    name: Media 1
+    binary_content: files/image-000.png
+    # groups:
+    #   - { title: Group 1 }
+    #   - { title: Group 2 }
+
+  # -
+  #   name: Media 2
+  #   groups:
+  #     - { title: Group 1 }

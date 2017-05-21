@@ -1,0 +1,24 @@
+---
+class: Indholdskanalen\MainBundle\Entity\SlideTemplate
+
+defaults:
+  enabled: 1
+
+entities:
+  -
+    id: text-top
+    name: Text top
+    path_icon: https://admin.os2display.vm/templates/default_templates/slides/text-bottom/text-bottom.png
+    path_preview: https://admin.os2display.vm/templates/default_templates/slides/text-bottom/text-bottom.html?1493123100
+    path_live: https://admin.os2display.vm/templates/default_templates/slides/text-bottom/text-bottom.html?1493123100
+    path_edit: https://admin.os2display.vm/templates/default_templates/slides/text-bottom/text-bottom-edit.html?1493123100
+    path_css: https://admin.os2display.vm/templates/default_templates/slides/text-bottom/text-bottom.css?1493123100
+    path_js: https://admin.os2display.vm/templates/default_templates/slides/text-bottom/../../../js/baseSlide.js
+    path: https://admin.os2display.vm/templates/default_templates/slides/text-bottom/
+    script_id: base
+    orientation: landscape
+    ideal_dimensions: {"width":"1920","height":"1080"}
+    media_type: image
+    slide_type: base
+    empty_options: {"fontsize":"50","bgcolor":"#ccc","textcolor":"#fff","textbgcolor":"rgba(0, 0, 0, 0.7)","headline":"","text":"","logopos":{"top":"0","bottom":"auto","left":"0","right":"auto"},"logosize":"10%"}
+    tools: [{"name":"Baggrund","id":"background-editor"},{"name":"Logo","id":"logo-editor"},{"name":"Tekst","id":"text-editor"}]
