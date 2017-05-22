@@ -1,0 +1,13 @@
+---
+class: Indholdskanalen\MainBundle\Entity\ChannelScreenRegion
+
+entities:
+  -
+    channel: { title: Channel 1 }
+    screen: { title: Screen 1 }
+    region: 1
+
+  -
+    channel: { title: Channel 2 }
+    screen: { title: Screen 2 }
+    region: 1

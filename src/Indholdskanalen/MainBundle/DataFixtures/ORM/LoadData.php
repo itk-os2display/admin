@@ -32,7 +32,7 @@ class LoadData extends ContainerAwareFixture {
     foreach ($filePaths as $path) {
       // Change directory to be able to load files relatively to the current fixture path.
       chdir(dirname($path));
-      $this->info($path);
+      $this->write(null, PHP_EOL . "<options=bold>$path</>");
 
       $yaml = file_get_contents($path);
       $data = Yaml::parse($yaml);
@@ -50,7 +50,6 @@ class LoadData extends ContainerAwareFixture {
 
   private function loadData(array $data) {
     if (!isset($data['class'])) {
-      return;
       throw new \Exception('Class not defined');
     }
 
@@ -74,8 +73,13 @@ class LoadData extends ContainerAwareFixture {
         if ($metadata->hasAssociation($property)) {
           $targetClass = $metadata->getAssociationTargetClass($property);
           $value = $this->getEntity($targetClass, $value);
-        } elseif ($entity instanceof GroupableEntity && $property === 'groups') {
+        }
+        elseif ($entity instanceof GroupableEntity && $property === 'groups') {
           $value = $this->getGroups($value);
+        }
+        // Workaround for "user" not being a real association on some entities.
+        elseif (is_array($value) && $metadata->getTypeOfField($property) === 'integer' && $property === 'user') {
+          $value = $this->getEntity(User::class, $value)->getId();
         }
         if ($accessor->isWritable($entity, $property)) {
           $accessor->setValue($entity, $property, $value);
@@ -86,7 +90,7 @@ class LoadData extends ContainerAwareFixture {
       }
       $this->persistEntity($entity);
 
-      $this->info(get_class($entity) . '#' . $entity->getId());
+      $this->info("\t" . get_class($entity) . '#' . $entity->getId());
     }
   }
 
@@ -104,7 +108,7 @@ class LoadData extends ContainerAwareFixture {
     $entity = $repository->findOneBy($criteria);
 
     if ($entity === NULL) {
-      $this->error('No such entity: ' . json_encode($criteria, JSON_PRETTY_PRINT));
+      throw new \Exception('No such entity of type ' . $class . ': ' . json_encode($criteria, JSON_PRETTY_PRINT));
     }
 
     return $entity;
@@ -118,17 +122,15 @@ class LoadData extends ContainerAwareFixture {
     $this->write('warning', $messages, $newline);
   }
 
-  private function error($messages, $newline = TRUE) {
-    $this->write('error', $messages, $newline);
-  }
-
   private function write($type, $messages, $newline = TRUE) {
     if (!is_array($messages)) {
       $messages = [$messages];
     }
-    $messages = array_map(function ($message) use ($type) {
-      return "<$type>$message</$type>";
-    }, $messages);
+    if ($type) {
+      $messages = array_map(function ($message) use ($type) {
+        return "<$type>$message</$type>";
+      }, $messages);
+    }
     $this->output->write($messages, $newline);
   }
 

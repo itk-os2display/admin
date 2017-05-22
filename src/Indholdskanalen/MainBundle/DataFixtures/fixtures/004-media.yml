@@ -9,12 +9,82 @@ defaults:
 entities:
   -
     name: Media 1
-    binary_content: files/image-000.png
+    binary_content: files/image-001.jpg
     # groups:
     #   - { title: Group 1 }
     #   - { title: Group 2 }
 
-  # -
-  #   name: Media 2
-  #   groups:
-  #     - { title: Group 1 }
+  -
+    name: Media 2
+    binary_content: files/image-002.jpg
+    user: { email: user@example.com }
+    groups:
+      - { title: Group 1 }
+
+  -
+    name: Media 3
+    binary_content: files/image-003.jpg
+
+  -
+    name: Media 4
+    binary_content: files/image-004.jpg
+
+  -
+    name: Media 5
+    binary_content: files/image-005.jpg
+
+  -
+    name: Media 6
+    binary_content: files/image-006.jpg
+
+  -
+    name: Media 7
+    binary_content: files/image-007.jpg
+
+  -
+    name: Media 8
+    binary_content: files/image-008.jpg
+
+  -
+    name: Media 9
+    binary_content: files/image-009.jpg
+
+  -
+    name: Media 10
+    binary_content: files/image-010.jpg
+
+  -
+    name: Media 11
+    binary_content: files/image-011.jpg
+
+  -
+    name: Media 12
+    binary_content: files/image-012.jpg
+
+  -
+    name: Media 13
+    binary_content: files/image-013.jpg
+
+  -
+    name: Media 14
+    binary_content: files/image-014.jpg
+
+  -
+    name: Media 15
+    binary_content: files/image-015.jpg
+
+  -
+    name: Media 16
+    binary_content: files/image-016.jpg
+
+  -
+    name: Media 17
+    binary_content: files/image-017.jpg
+
+  -
+    name: Media 18
+    binary_content: files/image-018.jpg
+
+  -
+    name: Media 19
+    binary_content: files/image-019.jpg

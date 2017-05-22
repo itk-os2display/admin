@@ -13,6 +13,27 @@ entities:
     path_edit: https://admin.os2display.vm/templates/default_templates/screens/full-screen/full-screen-edit.html?1493123100
     path_css: https://admin.os2display.vm/templates/default_templates/screens/full-screen/full-screen.css?1493123100
     path: https://admin.os2display.vm/templates//default_templates/screens/full-screen
-    tools:
-      - {}
+    tools: []
     orientation: landscape
+
+  -
+    id: two-columns
+    name: To kolonner
+    path_icon: https://admin.os2display.vm/templates/default_templates/screens/two-columns/two-columns.png
+    path_live: https://admin.os2display.vm/templates/default_templates/screens/two-columns/two-columns-live.html?1493123100
+    path_edit: https://admin.os2display.vm/templates/default_templates/screens/two-columns/two-columns-edit.html?1493123100
+    path_css: https://admin.os2display.vm/templates/default_templates/screens/two-columns/two-columns.css?1493123100
+    path: https://admin.os2display.vm/templates//default_templates/screens/two-columns
+    tools: []
+    orientation: landscape
+  -
+    id: three-columns
+    name: Tre kolonner
+    path_icon: https://admin.os2display.vm/templates/default_templates/screens/three-columns/three-columns.png
+    path_live: https://admin.os2display.vm/templates/default_templates/screens/three-columns/three-columns-live.html?1493123100
+    path_edit: https://admin.os2display.vm/templates/default_templates/screens/three-columns/three-columns-edit.html?1493123100
+    path_css: https://admin.os2display.vm/templates/default_templates/screens/three-columns/three-columns.css?1493123100
+    path: https://admin.os2display.vm/templates//default_templates/screens/three-columns
+    tools: []
+    orientation: landscape
+    enabled: 0

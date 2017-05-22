@@ -1,0 +1,18 @@
+---
+class: Indholdskanalen\MainBundle\Entity\ChannelSlideOrder
+
+entities:
+  -
+    channel: { title: Channel 1 }
+    slide: { title: Slide 1 }
+    sortOrder: 1
+
+  -
+    channel: { title: Channel 1 }
+    slide: { title: Slide 2 }
+    sortOrder: 2
+
+  -
+    channel: { title: Channel 2 }
+    slide: { title: Slide 2 }
+    sortOrder: 1

@@ -1,0 +1,14 @@
+---
+class: Indholdskanalen\MainBundle\Entity\MediaOrder
+
+defaults:
+  sortOrder: 0
+
+entities:
+  -
+    slide: {title: Slide 1}
+    media: {name: Media 17}
+
+  -
+    slide: {title: Slide 2}
+    media: {name: Media 2}

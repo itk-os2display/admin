@@ -22,3 +22,41 @@ entities:
     slide_type: base
     empty_options: {"fontsize":"50","bgcolor":"#ccc","textcolor":"#fff","textbgcolor":"rgba(0, 0, 0, 0.7)","headline":"","text":"","logopos":{"top":"0","bottom":"auto","left":"0","right":"auto"},"logosize":"10%"}
     tools: [{"name":"Baggrund","id":"background-editor"},{"name":"Logo","id":"logo-editor"},{"name":"Tekst","id":"text-editor"}]
+
+  -
+    id: only-image
+    name: Kun billede
+    enabled: 1
+    path_icon: https://admin.os2display.vm/templates/default_templates/slides/only-image/only-image.png
+    path_preview: https://admin.os2display.vm/templates/default_templates/slides/only-image/only-image.html?1493123100
+    path_live: https://admin.os2display.vm/templates/default_templates/slides/only-image/only-image.html?1493123100
+    path_edit: https://admin.os2display.vm/templates/default_templates/slides/only-image/only-image-edit.html?1493123100
+    path_css: https://admin.os2display.vm/templates/default_templates/slides/only-image/only-image.css?1493123100
+    path_js: https://admin.os2display.vm/templates/default_templates/slides/only-image/../../../js/baseSlide.js
+    path: https://admin.os2display.vm/templates/default_templates/slides/only-image/
+    script_id: base
+    orientation: landscape
+    ideal_dimensions: {"width":"1920","height":"1080"}
+    media_type: image
+    slide_type: base
+    empty_options: {"bgcolor":"#ccc","logopos":{"top":"0","bottom":"auto","left":"0","right":"auto"},"logosize":"10%"}
+    tools: [{"name":"Baggrund","id":"background-editor"},{"name":"Logo","id":"logo-editor"}]
+
+  -
+    id: slideshow
+    name: Slideshow
+    path_icon: https://admin.os2display.vm/templates/default_templates/slides/slideshow/slideshow.png
+    path_preview: https://admin.os2display.vm/templates/default_templates/slides/slideshow/slideshow-preview.html?1493126531
+    path_live: https://admin.os2display.vm/templates/default_templates/slides/slideshow/slideshow.html?1493126531
+    path_edit: https://admin.os2display.vm/templates/default_templates/slides/slideshow/slideshow-preview.html?1493126531
+    path_css: https://admin.os2display.vm/templates/default_templates/slides/slideshow/slideshow.css?1493126531
+    path_js: https://admin.os2display.vm/templates/default_templates/slides/slideshow/../../../js/slideshowSlide.js
+    path: https://admin.os2display.vm/templates/default_templates/slides/slideshow/
+    script_id: slideshow
+    orientation: landscape
+    ideal_dimensions: {"width":"1920","height":"1080"}
+    media_type: image
+    slide_type: slideshow
+    empty_options: {"duration":10,"animation":"","fade":"fade","logopos":{"top":"0","bottom":"auto","left":"0","right":"auto"},"logosize":"10%"}
+    tools: [{"name":"Tilf\u00f8j billeder","id":"slideshow-editor"},{"name":"Effekter","id":"slideshow-effects-editor"},{"name":"R\u00e6kkef\u00f8lge","id":"slideshow-order-editor"},{"name":"Logo","id":"logo-editor"}]
+    enabled: 0

@@ -69,15 +69,27 @@ Run only tests with a specific tag:
 
 # Fixtures
 
+
+Before loading fixtures we have to make sure that a search index is active. We can activate the sample index like this:
+
 ```
-app/console doctrine:migrations:migrate first
-app/console doctrine:migrations:migrate
-app/console doctrine:fixtures:load
+token=$(curl --silent --insecure --header 'Content-type: application/json' --data '{ "apikey": "795359dd2c81fa41af67faa2f9adbd32" }' https://search.os2display.vm/authenticate/ | php -r 'echo json_decode(stream_get_contents(STDIN))->token;')
+curl --silent --insecure --header "Authorization: Bearer $token" https://search.os2display.vm/api/e7df7cd2ca07f4f1ab415d457a6e1c13/activate
 ```
+
+Now, we can load fixtures and reindex everything:
 
 ```
 app/console doctrine:migrations:migrate --quiet --no-interaction first \
 	&& app/console doctrine:migrations:migrate --quiet --no-interaction \
 	&& app/console doctrine:fixtures:load --no-interaction
+```
+
+Finally, flush the index and re-index content:
+
+```
+token=$(curl --silent --insecure --header 'Content-type: application/json' --data '{ "apikey": "795359dd2c81fa41af67faa2f9adbd32" }' https://search.os2display.vm/authenticate/ | php -r 'echo json_decode(stream_get_contents(STDIN))->token;')
+curl --silent --insecure --header "Authorization: Bearer $token" --request DELETE https://search.os2display.vm/api/e7df7cd2ca07f4f1ab415d457a6e1c13/flush
+
 app/console ik:reindex
 ```
