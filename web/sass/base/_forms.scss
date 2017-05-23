@@ -11,20 +11,17 @@
 /* Basic styling
    ================================================================================================================== */
 
-.form,
-.search,
-.overview--section,
-.create-slide--section,
-.create-channel--section,
-.login--form,
-.login--remember-me,
-.login--reset-form,
-.edit-menu--content-page {
-  input,
-  textarea {
-    font: $font;
-  }
+input,
+textarea {
+  font: $font;
+}
 
+textarea {
+  width: 100%;
+}
+
+.has-legacy-form-styling,
+.search {
   input[type="text"],
   input[type="password"],
   input[type="date"],
@@ -34,8 +31,7 @@
   input[type="search"],
   input[type="tel"],
   input[type="time"],
-  input[type="url"],
-  textarea {
+  input[type="url"] {
     border: 1px solid #ddd;
     display: block;
     min-height: 1.25em;
@@ -63,6 +59,7 @@
     @include box-sizing(border-box);
   }
 
+
   /* Labels
      ================================================================================================================== */
 
@@ -74,5 +71,79 @@
     margin-left: .3em;
 
     color: #222;
+  }
+}
+
+
+
+.form {
+  input[type="text"],
+  input[type="password"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  textarea {
+    border: 1px solid transparent;
+    min-height: 3.25em;
+    padding: .85em 1.25em;
+
+    &:focus {
+      color: $gray-darker;
+    }
+
+    &[disabled] {
+      background-color: $gray-lightest;
+    }
+
+    &.is-error {
+      border: 1px solid $error-color;
+    }
+
+    &.edit-menu--background-form-element {
+      border: 1px solid $gray-lighter;
+    }
+  }
+
+  &.is-inverted {
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="email"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="url"],
+    textarea {
+      background-color: $gray-lightest;
+      color: $gray-darkest;
+    }
+  }
+
+  &--group {
+    margin-top: 1.25em;
+
+    label {
+      color: $gray-darker;
+      font-weight: 600;
+    }
+  }
+
+  &--checkbox {
+    margin-top: .75em;
+    padding-left: 1.2em;
+    position: relative;
+
+    input {
+      margin-left: -1.25em;
+      margin-top: .25em;
+      position: absolute;
+    }
   }
 }
