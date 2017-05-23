@@ -27,10 +27,6 @@ class LoadData extends ContainerAwareFixture {
     $this->manager = $manager;
     $this->output = new ConsoleOutput();
 
-    // Disable grouping filter.
-    $this->manager->getFilters()->disable('filter_grouping');
-
-
     $filePaths = array_map('realpath', glob(__DIR__ . '/../fixtures/*.yml'));
 
     foreach ($filePaths as $path) {
