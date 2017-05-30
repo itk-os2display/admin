@@ -39,7 +39,8 @@
         "behat/symfony2-extension": "^2.1",
         "behat/mink-selenium2-driver": "^1.3",
         "behat/mink-browserkit-driver": "^1.3",
-        "behatch/contexts": "^2.6"
+        "behatch/contexts": "^2.6",
+        "leanphp/behat-code-coverage": "dev-master"
     },
     "scripts": {
         "post-root-package-install": [
@@ -73,6 +74,12 @@
         },
         "branch-alias": {
             "dev-master": "2.5-dev"
+        }
+    },
+    "repositories": {
+        "behat-code-coverage": {
+            "type": "vcs",
+            "url": "https://github.com/thijswitteveen/behat-code-coverage"
         }
     }
 }

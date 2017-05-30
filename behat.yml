@@ -44,3 +44,13 @@ default:
       files_path: "%paths.base%/src/Indholdskanalen/MainBundle/Features/files"
 
     Behatch\Extension: ~
+
+    LeanPHP\Behat\CodeCoverage\Extension:
+      auth:       ~
+      drivers:
+        - local
+      filter:     ~
+      report:
+        format:   html
+        options:
+          target: build/behat-coverage
