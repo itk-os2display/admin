@@ -16,4 +16,5 @@ config.codekit
 composer.phar
 web/uploads/
 /bin
+build
 

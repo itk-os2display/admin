@@ -49,8 +49,17 @@ default:
       auth:       ~
       drivers:
         - local
-      filter:     ~
+      filter:
+        forceCoversAnnotation:                false
+        mapTestClassNameToCoveredClassName:   false
+        whitelist:
+          addUncoveredFilesFromWhitelist:     true
+          processUncoveredFilesFromWhitelist: false
+          include:
+            directories:
+              'src/Indholdskanalen/MainBundle/':
+                prefix: ''
       report:
         format:   html
         options:
-          target: build/behat-coverage
+          target: build/behat-coverage/html
