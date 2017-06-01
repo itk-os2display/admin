@@ -1,4 +1,4 @@
-default:
+default: &default
   calls:
     error_reporting: 16383 # E_ALL & ~E_USER_DREPRECATED
 
@@ -45,6 +45,10 @@ default:
 
     Behatch\Extension: ~
 
+coverage:
+  <<: *default
+
+  extensions:
     LeanPHP\Behat\CodeCoverage\Extension:
       auth:       ~
       drivers:

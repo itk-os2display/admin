@@ -65,3 +65,15 @@ Run only tests with a specific tag:
 ```
 ./vendor/behat/behat/bin/behat --suite=api_features --tags=group
 ```
+
+Test code coverage:
+
+```
+./vendor/behat/behat/bin/behat --profile=coverage --suite=api_features
+```
+
+Open code coverage report:
+
+```
+open build/behat-coverage/html/index.html
+```
