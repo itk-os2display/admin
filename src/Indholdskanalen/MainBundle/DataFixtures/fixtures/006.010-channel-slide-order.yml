@@ -16,3 +16,8 @@ entities:
     channel: { title: Channel 2 }
     slide: { title: Slide 2 }
     sortOrder: 1
+
+  -
+    channel: { title: Channel 1234 }
+    slide: { title: Slide 1234 }
+    sortOrder: 1

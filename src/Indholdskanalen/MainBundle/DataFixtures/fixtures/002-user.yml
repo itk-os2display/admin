@@ -25,3 +25,11 @@ entities:
     email: user@example.com
     plain_password: password
     roles: [ROLE_USER]
+  -
+    email: user123@example.com
+    plain_password: password
+    roles: [ROLE_USER]
+  -
+    email: user124@example.com
+    plain_password: password
+    roles: [ROLE_USER]

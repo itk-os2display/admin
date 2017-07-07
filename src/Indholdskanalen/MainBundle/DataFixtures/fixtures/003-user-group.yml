@@ -11,3 +11,29 @@ entities:
     user: { email: user@example.com }
     group: { title: Group 2 }
     role: ROLE_GROUP_ROLE_USER
+
+  -
+    user: { email: user123@example.com }
+    group: { title: Group 1 }
+    role: ROLE_GROUP_ROLE_USER
+  -
+    user: { email: user123@example.com }
+    group: { title: Group 2 }
+    role: ROLE_GROUP_ROLE_USER
+  -
+    user: { email: user123@example.com }
+    group: { title: Group 3 }
+    role: ROLE_GROUP_ROLE_USER
+
+  -
+    user: { email: user124@example.com }
+    group: { title: Group 1 }
+    role: ROLE_GROUP_ROLE_USER
+  -
+    user: { email: user124@example.com }
+    group: { title: Group 2 }
+    role: ROLE_GROUP_ROLE_USER
+  -
+    user: { email: user124@example.com }
+    group: { title: Group 4 }
+    role: ROLE_GROUP_ROLE_USER
