@@ -81,7 +81,7 @@ sudo service search_node stop && sudo service search_node start
 Then we can activate the sample index like this:
 
 ```
-sudo service search_node stop && sudo service search_node start
+sudo service search_node stop; sudo service search_node start
 token=$(curl --silent --insecure --header 'Content-type: application/json' --data '{ "apikey": "795359dd2c81fa41af67faa2f9adbd32" }' https://search.os2display.vm/authenticate/ | php -r 'echo json_decode(stream_get_contents(STDIN))->token;')
 curl --silent --insecure --header "Authorization: Bearer $token" https://search.os2display.vm/api/e7df7cd2ca07f4f1ab415d457a6e1c13/activate
 ```
