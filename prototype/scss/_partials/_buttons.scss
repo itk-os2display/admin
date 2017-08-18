@@ -1,0 +1,30 @@
+.page-toolbar {
+    background-color: $gray-100;
+    &.sticky-bottom {
+        position: sticky;
+        bottom: 0;
+        .col {
+            .btn {
+                margin: $spacer/2 0;
+            }
+        }
+    }
+}
+.content-toolbar {
+    &-textproperties {
+        .btn {
+            border-bottom: 0;
+            border-color: $gray-400;
+        }
+    }
+    .dropdown-menu {
+        .dropdown-item {
+            &.text-small {
+                font-size: smaller;
+            }
+            &.text-large {
+                font-size: larger;
+            }
+        }
+    }
+}

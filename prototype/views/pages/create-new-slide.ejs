@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ../partials/head %>
+    <title>Create new slide</title>
+  </head>
+  <body>
+
+    <% include ../partials/navbar %>
+
+    
+    
+    <!-- Create new slide  -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col content-edit">
+                <div class="row">
+                    <div class="col">
+                        <form action="">
+                            <p class="lead">Create new slide</p>
+
+                            <!-- Title -->
+                            <div class="row"> 
+                                <div class="col">
+                                    <h3>Slide title</h3>
+                                    <div class="form-group">
+                                        <label for="createSlideInputTitle" class="sr-only"><span>Edit title</span></label>
+                                        <input type="text" class="form-control form-control-lg" id="createSlideInputTitle" aria-describedby="titleHelp" placeholder="My awesome slide title">
+                                        <small id="titleHelp" class="form-text text-muted">Make sure your title is unique and easy recognizable.</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Templates -->
+                            <div class="row"> 
+                                <div class="col">
+                                    <h3>Choose your template</h3>
+                                    <div class="row">
+                                        <% for(var i=0; i < 8; i++) { %>
+                                            <div class="col-md-4 mb-4 content-template">
+                                                <div class="card">
+                                                    <img src="//placehold.it/1920x1080&text=template" class="card-img-top img-fluid" alt="Placehold preview">
+                                                    <div class="card-body">
+                                                        <p class="content-template-name mb-0"><strong>Template name</strong></p>
+                                                        <p class="content-template-description">Description of the template</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        <div class="row page-toolbar sticky-bottom">
+            <div class="col d-flex justify-content-start">
+                <a href="/" class="btn btn-secondary">Discard changes</a>
+            </div>
+            <div class="col d-flex justify-content-end">
+                <a href="/edit-slide" class="btn btn-success">Save and continue</a>
+            </div>
+        </div>
+    </div>
+    
+ 
+    
+    <% include ../partials/footer %>
+
+  </body>
+</html>

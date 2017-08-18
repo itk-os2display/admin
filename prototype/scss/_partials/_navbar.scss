@@ -1,0 +1,19 @@
+.navbar {
+    &-main {
+        @include media-breakpoint-up(md) {
+            padding-bottom: 0;
+        }
+        .nav-item {
+            &.active {
+                background-color: $gray-100;
+                .nav-link {
+                    color: $gray-700;
+                }
+            }
+        }
+    }
+    &-sub {
+        padding: $spacer/4 $spacer/2;
+        background-color: $gray-100;
+    }
+}

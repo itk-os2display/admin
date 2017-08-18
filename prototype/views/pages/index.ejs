@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ../partials/head %>
+    <title>Slides</title>
+  </head>
+  <body>
+
+    <% include ../partials/navbar %>
+    <% include ../partials/subnav-slides %>
+    
+    <!-- Create new slide  -->
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col content-list">
+                <div class="row">
+                    <% for(var i=0; i < 8; i++) { %>
+                        <div class="col-sm-6 col-lg-4 col-xl-3 mb-4 col-card">
+                            <div class="card">
+                                <span class="badge badge-success"><i class="fa fa-check"></i> Active</span>
+                                <a href="javascript:;" data-toggle="modal" data-target=".bd-example-modal-lg" class="card-img-top"><img src="https://source.unsplash.com/ZrfnOyYUfi4/1920x1080" class="img-fluid" alt="Placehold preview"></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">Slide title</h4>
+                                    <p class="card-text">Short slide description.</p>
+                                    <div class="content-toolbar btn-toolbar" role="toolbar" aria-label="slideProperties">
+                                        <div class="btn-group btn-group" role="group" aria-label="edit">
+                                            <a class="btn btn-dark" href="/edit-slide" data-toggle="tooltip" data-placement="top" title="Edit this slide"><i class="fa fa-edit"></i></a>
+                                            <a class="btn btn-dark" href="javascript:;" data-toggle="modal" data-target=".bd-example-modal-lg" data-toggle="tooltip" data-placement="top" title="Open preview"><i class="fa fa-eye"></i></a>
+                                            <a tabindex="0" class="btn btn-dark" role="button" data-toggle="popover" data-trigger="focus" data-container="body" title="Slide is in: " data-html="true" data-content="<ul class=''><li>Channal #1</li><li>Channal #2</li><li>Channal #3</li><li>Channal #4</li><li>Channal #5</li></ul>"><i class="fa fa-tv"></i></a>
+                                            <a class="btn btn-danger float-right" href="javascript:;" data-toggle="tooltip" data-placement="top" title="Delete this slide"><i class="fa fa-times"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    
+    <% include ../partials/preview-modal %>
+    <% include ../partials/footer %>
+
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover({
+                container: 'body',
+            })
+        });
+    </script>
+
+  </body>
+</html>
+

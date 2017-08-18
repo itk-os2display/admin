@@ -1,0 +1,22 @@
+.col-card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+.card {
+    display: block;
+    text-decoration: none;
+    position: relative;
+    border-radius: 3px;
+    transition: transform .2s cubic-bezier(.4,0,.2,1),  box-shadow .2s cubic-bezier(.4,0,.2,1);
+    &:hover {
+        will-change: transform;
+        transform: rotateY(2deg) rotateX(0deg) rotate(0deg) scale(1.01  );
+        box-shadow: -3px 0 25px rgba(0, 0, 0, .15);
+        transition: transform .4s cubic-bezier(.4,0,.2,1),  box-shadow .4s cubic-bezier(.4,0,.2,1);
+    }
+    .badge {
+        position: absolute;
+        top: $spacer/2;
+        left: $spacer/2;
+    }
+}

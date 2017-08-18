@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ../partials/head %>
+    <title>Edit slide</title>
+  </head>
+  <body>
+
+    <% include ../partials/navbar %>
+    
+    <!-- Edit slide  -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- TODO: only show alert if slice was just created
+                
+            <div class="col-12 mt-3">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong>Slide saved!</strong> Now you can edit the slide.
+                </div>
+            </div> -->
+            <div class="col-md-8 content-edit">
+                <div class="row content-header">
+                    <div class="col">
+                        <p class="lead">Edit slide</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        
+                        
+                        <form action="">
+                            
+
+                            <!-- Title -->
+                            <div class="row"> 
+                                <div class="col content-area">
+                                    <h3>Edit title</h3>
+                                    <div class="form-group">
+                                        <label for="createSlideInputTitle" class="sr-only"><span>Edit title</span></label>
+                                        <input type="text" class="form-control form-control-lg" id="createSlideInputTitle" aria-describedby="titleHelp" placeholder="My awesome slide title">
+                                        <small id="titleHelp" class="form-text text-muted">Make sure your title is unique and easy recognizable.</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Text -->
+                            <div class="row">
+                                <div class="col content-area">
+                                    <h3>Edit texts</h3>
+                                    <div class="form-group">
+                                        <label for="createSlideInputTextHeading"><span>Slide heading</span></label>
+                                        <!-- <% include ../partials/toolbar-text-edit %> -->
+                                        <%- include("../partials/toolbar-text-edit",{instance:"1"}) %>
+                                        <input type="text" class="form-control has-toolbar" id="createSlideInputTextHeading" aria-describedby="textHeadingHelp" placeholder="This slides heading">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="createSlideInputTextParagraph"><span>Slide paragraph</span></label>
+                                        <!-- <% include ../partials/toolbar-text-edit %> -->
+                                        <%- include("../partials/toolbar-text-edit",{instance:"2"}) %>
+                                        <textarea class="form-control has-toolbar" id="createSlideInputTextParagraph" rows="3" placeholder="This slides paragraph text"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Background color -->
+                            <div class="row"> 
+                                <div class="col content-area">
+                                    <h3>Edit background</h3>
+                                    <div class="form-group">
+                                        <label for="slideInputBackgroundColor"><span>Background color</span></label>
+                                        <input type="text" class="form-control" id="slideInputBackgroundColor" aria-describedby="titleHelp" placeholder="#HEX colorcode">
+                                        <button type="button" class="btn btn-primary"></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="row page-toolbar sticky-bottom">
+                    <div class="col d-flex justify-content-start">
+                        <a href="#" class="btn btn-secondary">Discard changes</a>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <button class="btn btn-outline-success mr-2">Save</button>
+                        <button class="btn btn-success" type="submit">Save and quit</button>
+                    </div>
+                </div>                
+            </div>
+            <div class="col-md-4 content-preview">
+                <div class="row">
+                    <div class="col">
+                        <img src="//placehold.it/1920x1080" class="img-fluid" alt="Placehold preview">
+                        <button class="btn btn-primary btn-block mb-3"><i class="fa fa-eye mr-2"></i>Open large preview</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="list-group">
+                            <div class="list-group-item">
+                                <p>Slide template:<br/>
+                                <strong>Simple image with text</strong></p>
+                            </div>
+                            <div class="list-group-item">
+                                <p>Slide is currently in these channels:<br/>
+                                <ul>
+                                    <li>No channes yet</li>
+                                </ul>
+                                </p>
+                            </div>
+                            <div class="list-group-item">
+                                <p>Slide was created:<br/>
+                                <strong>10/08/2017 - 13.08</strong><br/>by <strong>Admin</strong></p>
+                            </div>
+                            <div class="list-group-item">
+                                <p>Delete this slide:</p>
+                                <button class="btn btn-danger btn-block">Delete slide</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('#slideInputBackgroundColor').colorpicker({ /*options...*/ });
+    </script>
+
+  </body>
+</html>
