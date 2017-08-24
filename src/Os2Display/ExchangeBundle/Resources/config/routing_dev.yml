@@ -1,0 +1,3 @@
+os2_display_exchange_homepage:
+    path:     /exchange/test/{email}
+    defaults: { _controller: Os2DisplayExchangeBundle:Default:index }
