@@ -46,42 +46,6 @@ class ExchangeService
     }
 
     /**
-     * Get bookings for a given resource.
-     *
-     * @param $resourceMail
-     *   The mail of the resource.
-     * @param int $from
-     *   The the start of the interval as unix timestamp.
-     * @param int $to
-     *   The the end of the interval as unix timestamp.
-     * @param bool $enrich
-     *   Enrich the result with information from the bookings body.
-     *
-     * @return \Os2Display\ExchangeBundle\Model\ExchangeCalendar
-     *   Exchange calendar object with bookings for the interval.
-     */
-    public function getResourceBookings($resourceMail, $from, $to, $enrich = true)
-    {
-        // Get basic calendar information.
-        $calendar = $this->exchangeWebService->getResourceBookings($resourceMail, $from, $to);
-
-        // Check if body information should be included.
-        if ($enrich) {
-            $bookings = $calendar->getBookings();
-            foreach ($bookings as &$booking) {
-                $booking = $this->exchangeWebService->getBooking(
-                    $resourceMail,
-                    $booking->getId(),
-                    $booking->getChangeKey()
-                );
-            }
-            $calendar->setBookings($bookings);
-        }
-
-        return $calendar;
-    }
-
-    /**
      * Get the ExchangeBookings for a resource in an interval.
      *
      * @param $resourceMail
@@ -97,10 +61,10 @@ class ExchangeService
     public function getExchangeBookingsForInterval($resourceMail, $startTime, $endTime)
     {
         // Start by getting the bookings from exchange.
-        $exchangeCalendar = $this->getResourceBookings($resourceMail, $startTime, $endTime);
-        return $exchangeCalendar->getBookings();
-    }
+        $calendar = $this->exchangeWebService->getResourceBookings($resourceMail, $startTime, $endTime);
 
+        return $calendar->getBookings();
+    }
 
     /**
      * Update the calendar events for calendar slides.
@@ -113,7 +77,7 @@ class ExchangeService
         }
 
         // For each calendar slide
-        $slides = $this->container->get('doctrine')
+        $slides = $this->entityManager
             ->getRepository('IndholdskanalenMainBundle:Slide')->findBySlideType('calendar');
         $todayStart = time() - 3600;
         // Round down to nearest hour
@@ -123,7 +87,7 @@ class ExchangeService
 
         // Get data for interest period
         foreach ($slides as $slide) {
-            $bookings = array();
+            $bookings = [];
 
             $options = $slide->getOptions();
 
@@ -133,15 +97,15 @@ class ExchangeService
                 if (isset($options['interest_interval'])) {
                     $interestInterval = $options['interest_interval'];
                 }
-                $interestInterval = max(0, $interestInterval - 1);
+                $interestInterval = max(0, $interestInterval - 1) + 28;
 
                 // Move today with number of requested days.
                 $end = strtotime('+' . $interestInterval . ' days', $todayEnd);
 
                 try {
-                    $resourceBookings = $this->getResourceBookings($resource['mail'], $todayStart, $end);
+                    $resourceBookings = $this->getExchangeBookingsForInterval($resource['mail'], $todayStart, $end);
 
-                    if (count($resourceBookings->getBookings()) > 0) {
+                    if (count($resourceBookings) > 0) {
                         $bookings = array_merge($bookings, $resourceBookings);
                     }
                 } catch (\Exception $e) {
@@ -149,10 +113,12 @@ class ExchangeService
                 }
             }
 
+
             // Sort bookings by start time.
             usort($bookings, function ($a, $b) {
-                return strcmp($a->start_time, $b->start_time);
+                return strcmp($a->getStartTime(), $b->getStartTime());
             });
+
 
             // Save in externalData field
             $slide->setExternalData($bookings);

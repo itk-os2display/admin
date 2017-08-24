@@ -25,7 +25,7 @@ class ExchangeSoapClientService
     private $exchange;
 
     private $namespaces;
-    private $curlOptions = array();
+    private $curlOptions = [];
 
     /**
      * Construct the SOAP client.
@@ -42,15 +42,15 @@ class ExchangeSoapClientService
     public function __construct($host, $username, $password, $version = 'Exchange2010')
     {
         // Set account information to the Exchange EWS.
-        $this->exchange = array(
+        $this->exchange = [
             'host' => $host,
             'version' => $version,
             'username' => $username,
             'password' => $password,
-        );
+        ];
 
         // Set default options.
-        $this->curlOptions = array(
+        $this->curlOptions = [
             CURLOPT_SSL_VERIFYPEER => false,
             CURLOPT_SSL_VERIFYHOST => false,
             CURLOPT_RETURNTRANSFER => true,
@@ -60,15 +60,15 @@ class ExchangeSoapClientService
             CURLOPT_USERPWD => $this->exchange['username'] . ':' . $this->exchange['password'],
             CURLOPT_CONNECTTIMEOUT => 10,
             CURLOPT_FOLLOWLOCATION => 1,
-        );
+        ];
 
         // Set EWS namespaces.
-        $this->namespaces = array(
+        $this->namespaces = [
             'xsd' => 'http://www.w3.org/2001/XMLSchema',
             'soap' => 'http://schemas.xmlsoap.org/soap/envelope/',
             't' => 'http://schemas.microsoft.com/exchange/services/2006/types',
             'm' => 'http://schemas.microsoft.com/exchange/services/2006/messages',
-        );
+        ];
     }
 
     /**
@@ -86,7 +86,7 @@ class ExchangeSoapClientService
      * @return mixed
      *   The RAW XML response.
      */
-    public function request($action, $xmlBody, $impersonationId = null, $options = array())
+    public function request($action, $xmlBody, $impersonationId = null, $options = [])
     {
         // Merge options with defaults.
         $options = $options + $this->curlOptions;
@@ -118,13 +118,13 @@ class ExchangeSoapClientService
     private function curlRequest($action, $requestBody, $options)
     {
         // Set headers.
-        $headers = array(
+        $headers = [
             'Method: POST',
             'Connection: Keep-Alive',
             'User-Agent: Symfony-Exchange-Soap-Client',
             'Content-Type: text/xml; charset=utf-8',
             'SOAPAction: "' . $action . '"',
-        );
+        ];
         $options[CURLOPT_HTTPHEADER] = $headers;
 
         // Set request content.
@@ -176,8 +176,8 @@ class ExchangeSoapClientService
             }
         }
 
-        // Build impersonation if needed.
-        $impersonation = '';
+        // Build impersonation if set.
+        $impersonation = null;
         if (is_string($impersonationId)) {
             $impersonation = implode('', [
                 '<t:ExchangeImpersonation>',
@@ -191,19 +191,19 @@ class ExchangeSoapClientService
         }
 
         // Build the final message.
-        $message = array(
+        $message = [
             'header' => '<?xml version="1.0" encoding="UTF-8"?>',
             'env_start' => '<soap:Envelope' . $ns_string . '>',
             'soap_header_start' => '<soap:Header>',
             'version' => '<t:RequestServerVersion Version ="' . $this->exchange['version'] . '"/>',
             'tz' => '<t:TimeZoneContext><t:TimeZoneDefinition Id="Central Europe Standard Time"/></t:TimeZoneContext>',
-//            'im' => $impersonation,
+            'im' => $impersonation,
             'soap_header_end' => '</soap:Header>',
             'body_start' => '<soap:Body>',
             'body' => $xmlBody,
             'body_end' => '</soap:Body>',
             'env_end' => '</soap:Envelope>',
-        );
+        ];
 
         return implode("\n", $message);
     }

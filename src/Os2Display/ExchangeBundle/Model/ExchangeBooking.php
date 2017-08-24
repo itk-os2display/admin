@@ -4,140 +4,62 @@ namespace Os2Display\ExchangeBundle\Model;
 
 class ExchangeBooking
 {
-    public $id;
-    public $changeKey;
-    public $subject;
-    public $start;
-    public $end;
-    public $body;
+    public $event_name;
+    public $start_time;
+    public $end_time;
 
-    public function __construct($id, $changeKey, $subject = '', $start = 0, $end = 0, $body = null)
+    public function __construct($event_name = '', $start_time = 0, $end_time = 0)
     {
-        $this->id = $id;
-        $this->changeKey = $changeKey;
-        $this->subject = $subject;
-        $this->start = $start;
-        $this->end = $end;
-        $this->body = $body;
+        $this->event_name = $event_name;
+        $this->start_time = $start_time;
+        $this->end_time = $end_time;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getBody()
+    public function getEventName()
     {
-        return $this->body;
+        return $this->event_name;
     }
 
     /**
-     * @param null $body
-     *
-     * @return $this
+     * @param string $event_name
      */
-    public function setBody($body)
+    public function setEventName($event_name)
     {
-        $this->body = $body;
-
-        return $this;
+        $this->event_name = $event_name;
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getId()
+    public function getStartTime()
     {
-        return $this->id;
+        return $this->start_time;
     }
 
     /**
-     * @param mixed $id
-     *
-     * @return $this
+     * @param int $start_time
      */
-    public function setId($id)
+    public function setStartTime($start_time)
     {
-        $this->id = $id;
-
-        return $this;
+        $this->start_time = $start_time;
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getChangeKey()
+    public function getEndTime()
     {
-        return $this->changeKey;
+        return $this->end_time;
     }
 
     /**
-     * @param mixed $changeKey
-     *
-     * @return $this
+     * @param int $end_time
      */
-    public function setChangeKey($changeKey)
+    public function setEndTime($end_time)
     {
-        $this->changeKey = $changeKey;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSubject()
-    {
-        return $this->subject;
-    }
-
-    /**
-     * @param mixed $subject
-     *
-     * @return $this
-     */
-    public function setSubject($subject)
-    {
-        $this->subject = $subject;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getStart()
-    {
-        return $this->start;
-    }
-
-    /**
-     * @param mixed $start
-     *
-     * @return $this
-     */
-    public function setStart($start)
-    {
-        $this->start = $start;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEnd()
-    {
-        return $this->end;
-    }
-
-    /**
-     * @param mixed $end
-     *
-     * @return $this
-     */
-    public function setEnd($end)
-    {
-        $this->end = $end;
-
-        return $this;
+        $this->end_time = $end_time;
     }
 }
