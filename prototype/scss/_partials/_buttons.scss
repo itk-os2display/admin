@@ -3,6 +3,7 @@
     &.sticky-bottom {
         position: sticky;
         bottom: 0;
+        z-index: 100;
         .col {
             .btn {
                 margin: $spacer/2 0;

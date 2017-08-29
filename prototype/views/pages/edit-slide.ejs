@@ -30,15 +30,16 @@
                 <div class="row">
                     <div class="col">
                         
-                        
                         <form action="">
-                            
-
                             <!-- Title -->
                             <div class="row"> 
                                 <div class="col content-area">
+                                    <a class="btn btn-secondary float-right" data-toggle="collapse" href="#collapseTitle" aria-expanded="true" aria-controls="collapseTitle">
+                                        <i class="fa fa-compress"></i>
+                                        <i class="fa fa-expand"></i>
+                                    </a>
                                     <h3>Edit title</h3>
-                                    <div class="form-group">
+                                    <div class="form-group collapse show" id="collapseTitle">
                                         <label for="createSlideInputTitle" class="sr-only"><span>Edit title</span></label>
                                         <input type="text" class="form-control form-control-lg" id="createSlideInputTitle" aria-describedby="titleHelp" placeholder="My awesome slide title">
                                         <small id="titleHelp" class="form-text text-muted">Make sure your title is unique and easy recognizable.</small>
@@ -49,30 +50,221 @@
                             <!-- Text -->
                             <div class="row">
                                 <div class="col content-area">
-                                    <h3>Edit texts</h3>
-                                    <div class="form-group">
-                                        <label for="createSlideInputTextHeading"><span>Slide heading</span></label>
-                                        <!-- <% include ../partials/toolbar-text-edit %> -->
-                                        <%- include("../partials/toolbar-text-edit",{instance:"1"}) %>
-                                        <input type="text" class="form-control has-toolbar" id="createSlideInputTextHeading" aria-describedby="textHeadingHelp" placeholder="This slides heading">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="createSlideInputTextParagraph"><span>Slide paragraph</span></label>
-                                        <!-- <% include ../partials/toolbar-text-edit %> -->
-                                        <%- include("../partials/toolbar-text-edit",{instance:"2"}) %>
-                                        <textarea class="form-control has-toolbar" id="createSlideInputTextParagraph" rows="3" placeholder="This slides paragraph text"></textarea>
+                                    <a class="btn btn-secondary float-right" data-toggle="collapse" href="#collapseText" aria-expanded="true" aria-controls="collapseText">
+                                        <i class="fa fa-compress"></i>
+                                        <i class="fa fa-expand"></i>
+                                    </a>
+                                    <h3>Edit texts</h3>                                    
+                                    <div id="collapseText" class="collapse show">
+                                        <div class="form-group">
+                                            <label for="createSlideInputTextHeading"><span>Slide heading</span></label>
+                                            <% include ../partials/toolbar-text-edit %>
+                                            
+                                            <input type="text" class="form-control has-toolbar" id="createSlideInputTextHeading" aria-describedby="textHeadingHelp" placeholder="This slides heading">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="createSlideInputTextParagraph"><span>Slide paragraph</span></label>
+                                            <% include ../partials/toolbar-text-edit %>
+                                            
+                                            <textarea class="form-control has-toolbar" id="createSlideInputTextParagraph" rows="3" placeholder="This slides paragraph text"></textarea>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Background color -->
+                            <!-- Background -->
                             <div class="row"> 
                                 <div class="col content-area">
+                                    <a class="btn btn-secondary float-right" data-toggle="collapse" href="#collapseBg" aria-expanded="true" aria-controls="collapseBg">
+                                        <i class="fa fa-compress"></i>
+                                        <i class="fa fa-expand"></i>
+                                    </a>
                                     <h3>Edit background</h3>
-                                    <div class="form-group">
+                                    <div id="collapseBg" class="form-group collapse show">
                                         <label for="slideInputBackgroundColor"><span>Background color</span></label>
-                                        <input type="text" class="form-control" id="slideInputBackgroundColor" aria-describedby="titleHelp" placeholder="#HEX colorcode">
-                                        <button type="button" class="btn btn-primary"></button>
+                                        <div class="input-group">
+                                            <span class="input-group-addon" id="hex-color"><i class="fa fa-hashtag"></i></span>
+                                            <input type="text" class="form-control" placeholder="HEX color value" aria-label="HEX color value" aria-describedby="hex-color-value">
+                                        </div>
+                                        <button type="button" class="btn btn-primary mt-3">Upload image</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Settings -->
+                            <div class="row"> 
+                                <div class="col content-area">
+                                    <a class="btn btn-secondary float-right" data-toggle="collapse" href="#collapseSettings" aria-expanded="true" aria-controls="collapseSettings">
+                                        <i class="fa fa-compress"></i>
+                                        <i class="fa fa-expand"></i>
+                                    </a>
+                                    <h3>Settings</h3>
+                                    <div id="collapseSettings" class="form-group collapse show">
+                                        <label for="slideInputDuration"><span>Duration</span></label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon" id="duration-in-seconds"><i class="fa fa-clock-o"></i></span>
+                                            <input type="text" class="form-control" placeholder="Duration in seconds" aria-label="Duration" aria-describedby="duration-in-seconds">
+                                        </div>
+                                        <small id="titleHelp" class="form-text text-muted">Define how many seconds your slide should be visible</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Planning -->
+                            <div class="row"> 
+                                <div class="col content-area">
+                                    <a class="btn btn-secondary float-right" data-toggle="collapse" href="#collapsePlanning" aria-expanded="true" aria-controls="collapsePlanning">
+                                        <i class="fa fa-compress"></i>
+                                        <i class="fa fa-expand"></i>
+                                    </a>
+                                    <h3>Activate and plan</h3>
+                                    <div id="collapsePlanning" class="collapse show">
+                                        <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input">
+                                                Publish
+                                            </label>
+                                            <small id="titleHelp" class="form-text text-muted">Slide will be published</small>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="slideInputPublishFrom" class="col-form-label">From</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon" id="datetime-from"><i class="fa fa-calendar"></i></span>
+                                                    <input type="text" class="form-control" placeholder="Date/Time start" aria-label="Date/Time" aria-describedby="datetime-from">
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="slideInputPublishTo" class="col-form-label">To</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon" id="datetime-to"><i class="fa fa-calendar"></i></span>
+                                                    <input type="text" class="form-control" placeholder="Date/Time end" aria-label="Date/Time" aria-describedby="datetime-to">
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="form-group">
+                                                <small id="titleHelp" class="form-text text-muted">Slide will only be published in this interval</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Groups -->
+                            <div class="row"> 
+                                <div class="col content-area">
+                                    <a class="btn btn-secondary float-right" data-toggle="collapse" href="#collapseGroup" aria-expanded="true" aria-controls="collapseGroup">
+                                        <i class="fa fa-compress"></i>
+                                        <i class="fa fa-expand"></i>
+                                    </a>
+                                    <h3>Groups</h3>
+                                    <div id="collapseGroup" class="collapse show">
+                                        <small id="titleHelp" class="form-text text-muted mb-4">Choose witch groups your awesome slide will be part of.</small>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <div class="form-check btn btn-secondary btn-block">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Name of group number #1
+                                                    </label>
+                                                </div>
+                                                <div class="form-check btn btn-secondary btn-block">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Name of group number #2
+                                                    </label>
+                                                </div>
+                                                <div class="form-check btn btn-secondary btn-block">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Name of group number #3
+                                                    </label>
+                                                </div>
+                                                <div class="form-check btn btn-secondary btn-block">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Name of group number #4
+                                                    </label>
+                                                </div>
+                                                <div class="form-check btn btn-secondary btn-block">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Name of group number #5
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <div class="form-check btn btn-secondary btn-block">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Name of group number #6
+                                                    </label>
+                                                </div>
+                                                <div class="form-check btn btn-secondary btn-block">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Name of group number #7
+                                                    </label>
+                                                </div>
+                                                <div class="form-check btn btn-secondary btn-block">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Name of group number #8
+                                                    </label>
+                                                </div>
+                                                <div class="form-check btn btn-secondary btn-block">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Name of group number #9
+                                                    </label>
+                                                </div>
+                                                <div class="form-check btn btn-secondary btn-block">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Name of group number #10
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Channals -->
+                            <div class="row"> 
+                                <div class="col content-area">
+                                    <a class="btn btn-secondary float-right" data-toggle="collapse" href="#collapseChannels" aria-expanded="true" aria-controls="collapseChannels">
+                                        <i class="fa fa-compress"></i>
+                                        <i class="fa fa-expand"></i>
+                                    </a>
+                                    <h3>Channels</h3>
+                                    <div id="collapseChannels" class="collapse show">
+                                        <button type="button" class="btn btn-primary mb-2">Choose channel</button>
+                                        <small id="titleHelp" class="form-text text-muted mb-2">Selected channels</small>
+                                        <div class="alert alert-dark alert-dismissible fade show" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            Name of channel
+                                        </div>
+                                        <div class="alert alert-dark alert-dismissible fade show" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            Name of channel
+                                        </div>
+                                        <div class="alert alert-dark alert-dismissible fade show" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            Name of channel
+                                        </div>
+                                        <div class="alert alert-dark alert-dismissible fade show" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            Name of channel
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +286,8 @@
                 <div class="row">
                     <div class="col">
                         <img src="//placehold.it/1920x1080" class="img-fluid" alt="Placehold preview">
-                        <button class="btn btn-primary btn-block mb-3"><i class="fa fa-eye mr-2"></i>Open large preview</button>
+                        <button class="btn btn-primary btn-block mb-3" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fa fa-eye mr-2"></i>Open large preview</button>
+                        
                     </div>
                 </div>
                 <div class="row">
@@ -125,10 +318,9 @@
             </div>
         </div>
     </div>
-
-    <script>
-        $('#slideInputBackgroundColor').colorpicker({ /*options...*/ });
-    </script>
+    
+    <% include ../partials/preview-modal %>
+    <% include ../partials/footer %>
 
   </body>
 </html>
