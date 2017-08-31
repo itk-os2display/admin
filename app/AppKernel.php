@@ -33,6 +33,7 @@ class AppKernel extends Kernel {
       new JMS\AopBundle\JMSAopBundle(),
       new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
       new Itk\KobaIntegrationBundle\ItkKobaIntegrationBundle(),
+      new Os2Display\ExchangeBundle\Os2DisplayExchangeBundle(),
     );
 
     if (in_array($this->getEnvironment(), array('dev', 'test', 'acceptance'))) {
@@ -40,11 +41,11 @@ class AppKernel extends Kernel {
       $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
       $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
     }
+        return $bundles;
+    }
 
-    return $bundles;
-  }
-
-  public function registerContainerConfiguration(LoaderInterface $loader) {
-    $loader->load(__DIR__ . '/config/config_' . $this->getEnvironment() . '.yml');
-  }
+    public function registerContainerConfiguration(LoaderInterface $loader)
+    {
+        $loader->load(__DIR__ . '/config/config_' . $this->getEnvironment() . '.yml');
+    }
 }
