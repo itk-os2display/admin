@@ -3,47 +3,44 @@
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
-class AppKernel extends Kernel
-{
-    public function registerBundles()
-    {
-        $bundles = array(
-            new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
-            new Symfony\Bundle\SecurityBundle\SecurityBundle(),
-            new Symfony\Bundle\TwigBundle\TwigBundle(),
-            new Symfony\Bundle\MonologBundle\MonologBundle(),
-            new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
-            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
-            new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
-            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new FOS\UserBundle\FOSUserBundle(),
-            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-            new Sonata\CoreBundle\SonataCoreBundle(),
-            new Sonata\BlockBundle\SonataBlockBundle(),
-            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
-            new Sonata\AdminBundle\SonataAdminBundle(),
-            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
-            new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
-            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
-            new Sonata\MediaBundle\SonataMediaBundle(),
-            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
-            new Debril\RssAtomBundle\DebrilRssAtomBundle(),
-            new JMS\SerializerBundle\JMSSerializerBundle(),
-            new Indholdskanalen\MainBundle\IndholdskanalenMainBundle(),
-            new JMS\JobQueueBundle\JMSJobQueueBundle(),
-            new JMS\DiExtraBundle\JMSDiExtraBundle($this),
-            new JMS\AopBundle\JMSAopBundle(),
-            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
-            new Itk\KobaIntegrationBundle\ItkKobaIntegrationBundle(),
-            new Os2Display\ExchangeBundle\Os2DisplayExchangeBundle(),
-        );
+class AppKernel extends Kernel {
+  public function registerBundles() {
+    $bundles = array(
+      new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
+      new Symfony\Bundle\SecurityBundle\SecurityBundle(),
+      new Symfony\Bundle\TwigBundle\TwigBundle(),
+      new Symfony\Bundle\MonologBundle\MonologBundle(),
+      new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
+      new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+      new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+      new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+      new FOS\UserBundle\FOSUserBundle(),
+      new FOS\RestBundle\FOSRestBundle(),
+      new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
+      new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+      new Sonata\CoreBundle\SonataCoreBundle(),
+      new Sonata\BlockBundle\SonataBlockBundle(),
+      new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+      new Sonata\AdminBundle\SonataAdminBundle(),
+      new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+      new Sonata\MediaBundle\SonataMediaBundle(),
+      new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
+      new Debril\RssAtomBundle\DebrilRssAtomBundle(),
+      new JMS\SerializerBundle\JMSSerializerBundle(),
+      new Indholdskanalen\MainBundle\IndholdskanalenMainBundle(),
+      new JMS\JobQueueBundle\JMSJobQueueBundle(),
+      new JMS\DiExtraBundle\JMSDiExtraBundle($this),
+      new JMS\AopBundle\JMSAopBundle(),
+      new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+      new Itk\KobaIntegrationBundle\ItkKobaIntegrationBundle(),
+      new Os2Display\ExchangeBundle\Os2DisplayExchangeBundle(),
+    );
 
-        if (in_array($this->getEnvironment(), array('dev', 'test'))) {
-            $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
-            $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
-            $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
-        }
-
+    if (in_array($this->getEnvironment(), array('dev', 'test', 'acceptance'))) {
+      $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
+      $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
+      $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
+    }
         return $bundles;
     }
 
