@@ -43,7 +43,13 @@
     <% include ../partials/preview-modal %>
     <% include ../partials/footer %>
 
-    
+    <script>
+            $(function () {
+                $('[data-toggle="popover"]').popover({
+                    container: 'body',
+                })
+            });
+        </script>
 
   </body>
 </html>
