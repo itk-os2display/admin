@@ -8,8 +8,6 @@ namespace Os2Display\ExchangeBundle\Exceptions;
 
 /**
  * Class ExchangeNotSupportedException
- *
- *
  * @package Os2Display\ExchangeBundle\Exceptions
  */
 class ExchangeNotSupportedException extends \RuntimeException
