@@ -24,6 +24,52 @@ class ExchangeWebService
     }
 
     /**
+     * Get detailed information about a booking.
+     *
+     * @param $id
+     *   The Exchange ID for the booking.
+     * @param $changeKey
+     *   The Exchange change key (revision id).
+     *
+     * @return array
+     */
+    public function getBooking($id, $changeKey)
+    {
+        // Build XML body.
+        $body = implode(
+            '',
+            [
+                '<GetItem xmlns="http://schemas.microsoft.com/exchange/services/2006/messages">',
+                '<ItemShape>',
+                '<t:BaseShape>Default</t:BaseShape>',
+                '<t:BodyType>Text</t:BodyType>',
+                '<t:AdditionalProperties>',
+                '<t:FieldURI FieldURI="item:Body" />',
+                '</t:AdditionalProperties>',
+                '</ItemShape>',
+                '<ItemIds>',
+                '<t:ItemId Id="' . $id . '" ChangeKey="' . $changeKey . '"/>',
+                '</ItemIds>',
+                '</GetItem>',
+            ]
+        );
+
+        $xml = $this->client->request('GetItem', $body);
+        $doc = new \DOMDocument();
+        $doc->loadXML($xml);
+
+        $xpath = new \DOMXPath($doc);
+        $xpath->registerNamespace('t', 'http://schemas.microsoft.com/exchange/services/2006/types');
+        $items = $xpath->query('//t:CalendarItem');
+
+        if ($items->length) {
+            return $this->nodeToArray($doc, $items->item(0));
+        }
+
+        return null;
+    }
+
+    /**
      * Get bookings on a resource.
      *
      * @param $resource
@@ -44,7 +90,7 @@ class ExchangeWebService
         $body = implode('', [
             '<FindItem  Traversal="Shallow" xmlns="http://schemas.microsoft.com/exchange/services/2006/messages">',
             '<ItemShape>',
-            '<t:BaseShape>Default</t:BaseShape>',
+            '<t:BaseShape>IdOnly</t:BaseShape>',
             '</ItemShape>',
             '<CalendarView StartDate="' . date('c', $from) . '" EndDate="' . date('c', $to) . '"/>',
             '<ParentFolderIds>',
@@ -68,32 +114,53 @@ class ExchangeWebService
         $calendarItems = $xpath->query('//t:CalendarItem');
 
         foreach ($calendarItems as $calendarItem) {
-            $calendar->addBooking($this->parseBookingXML($calendarItem, $xpath));
+            $itemIds = $this->nodeToArray($doc, $calendarItem);
+
+            $item = $this->getBooking($itemIds['ItemId']['@Id'], $itemIds['ItemId']['@ChangeKey']);
+
+            $subject = array_key_exists('Subject', $item) ? $item['Subject'] : null;
+            $location = array_key_exists('Location', $item) ? $item['Location'] : null;
+            $startTime = array_key_exists('Start', $item) ? strtotime($item['Start']) : null;
+            $endTime = array_key_exists('End', $item) ? strtotime($item['End']) : null;
+            $body = array_key_exists('Body', $item) ? $item['Body'] : null;
+
+            $booking = new ExchangeBooking();
+            $booking->setEventName($subject);
+            $booking->setLocation($location);
+            $booking->setStartTime($startTime);
+            $booking->setEndTime($endTime);
+            $booking->setBody($body);
+
+            $calendar->addBooking($booking);
         }
 
         return $calendar;
     }
 
-    /**
-     * Parse DOMNode with calendarItem data.
-     *
-     * @param \DOMNode $calendarItem
-     *   Node with calendar item data from XML.
-     * @param \DOMXPath $xpath
-     *   XPath.
-
-     * @return ExchangeBooking
-     *   The parsed Exchange booking object.
-     */
-    private function parseBookingXML(\DOMNode $calendarItem, \DOMXPath $xpath)
+    private function nodeToArray($dom, $node)
     {
-        $booking = new ExchangeBooking();
-        $booking->setEventName($xpath->evaluate('./t:Subject', $calendarItem)->item(0)->nodeValue);
-
-        // Set timestamps.
-        $booking->setStartTime(strtotime($xpath->evaluate('./t:Start', $calendarItem)->item(0)->nodeValue));
-        $booking->setEndTime(strtotime($xpath->evaluate('./t:End', $calendarItem)->item(0)->nodeValue));
-
-        return $booking;
+        if (!is_a($dom, 'DOMDocument') || !is_a($node, 'DOMNode')) {
+            return false;
+        }
+        $array = false;
+        if (empty(trim($node->localName))) {// Discard empty nodes
+            return false;
+        }
+        if (XML_TEXT_NODE == $node->nodeType) {
+            return $node->nodeValue;
+        }
+        foreach ($node->attributes as $attr) {
+            $array['@' . $attr->localName] = $attr->nodeValue;
+        }
+        foreach ($node->childNodes as $childNode) {
+            if (1 == $childNode->childNodes->length && XML_TEXT_NODE == $childNode->firstChild->nodeType) {
+                $array[$childNode->localName] = $childNode->nodeValue;
+            } else {
+                if (false !== ($a = self::nodeToArray($dom, $childNode))) {
+                    $array[$childNode->localName] = $a;
+                }
+            }
+        }
+        return $array;
     }
 }

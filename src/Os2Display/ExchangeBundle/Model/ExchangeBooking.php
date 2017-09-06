@@ -7,12 +7,16 @@ class ExchangeBooking
     public $event_name;
     public $start_time;
     public $end_time;
+    public $body;
+    public $location;
 
-    public function __construct($event_name = '', $start_time = 0, $end_time = 0)
+    public function __construct($event_name = '', $start_time = 0, $end_time = 0, $body = '', $location = '')
     {
         $this->event_name = $event_name;
         $this->start_time = $start_time;
         $this->end_time = $end_time;
+        $this->body = $body;
+        $this->location = $location;
     }
 
     /**
@@ -61,5 +65,37 @@ class ExchangeBooking
     public function setEndTime($end_time)
     {
         $this->end_time = $end_time;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBody()
+    {
+        return $this->body;
+    }
+
+    /**
+     * @param string $body
+     */
+    public function setBody($body)
+    {
+        $this->body = $body;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    /**
+     * @param string $location
+     */
+    public function setLocation($location)
+    {
+        $this->location = $location;
     }
 }
