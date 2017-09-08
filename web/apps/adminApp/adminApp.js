@@ -28,7 +28,7 @@ angular.module('adminApp').config(['$routeProvider', '$translateProvider', funct
   // Users
   .when('/user', {
     controller: 'AdminUserController',
-    templateUrl: 'apps/adminApp/user/admin-user.html?' + window.config.version
+    templateUrl: 'apps/adminApp/user/user.html?' + window.config.version
   })
   .when('/admin/users', {
     controller: 'AdminUsersController',

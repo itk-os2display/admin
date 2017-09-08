@@ -41,6 +41,12 @@ angular.module('adminApp').controller('AdminUserController', [
         title: role,
         actions: actions
       };
+
+      // Remove actions if this is profile page: /user
+      if ($location.path() === '/user') {
+        newRole.actions = null;
+      }
+
       $scope.userRoles.push(newRole);
     };
 
@@ -212,9 +218,16 @@ angular.module('adminApp').controller('AdminUserController', [
         return;
       }
 
+      var user = {
+        'id': $scope.user.id,
+        'firstname': $scope.user.firstname,
+        'lastname': $scope.user.lastname,
+        'email': $scope.user.email
+      };
+
       $scope.loading = true;
 
-      $scope.updateEntity('user', $scope.user).then(
+      $scope.updateEntity('user', user).then(
         function success(user) {
           if (user.id === userService.getCurrentUser().id) {
             userService.updateCurrentUser();
