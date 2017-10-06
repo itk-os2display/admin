@@ -148,6 +148,19 @@ class GroupController extends ApiController
     public function deleteAction(Request $request, Group $group)
     {
         $em = $this->getDoctrine()->getManager();
+
+        $userGroups = $em->getRepository('IndholdskanalenMainBundle:UserGroup')->findBy(['group' => $group->getId()]);
+
+        foreach ($userGroups as $userGroup) {
+            $em->remove($userGroup);
+        }
+
+        $groupings = $em->getRepository('IndholdskanalenMainBundle:Grouping')->findBy(['group' => $group->getId()]);
+
+        foreach ($groupings as $grouping) {
+            $em->remove($grouping);
+        }
+
         $em->remove($group);
         $em->flush();
 
