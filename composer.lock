@@ -4,8 +4,37 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "132be067a40a2996a6036e986c43b43e",
+    "content-hash": "a7e050a44eb165f217fa29bfc1fc0165",
     "packages": [
+        {
+            "name": "aakb/os2display-aarhus-templates",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:aakb/os2display-aarhus-templates.git",
+                "reference": "4910466d1d7439582752ca36add466b3fb48443c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aakb/os2display-aarhus-templates/zipball/4910466d1d7439582752ca36add466b3fb48443c",
+                "reference": "4910466d1d7439582752ca36add466b3fb48443c",
+                "shasum": ""
+            },
+            "require": {
+                "os2display/admin-bundle": "^1.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Itk\\AarhusTemplateBundle\\": ""
+                }
+            },
+            "description": "Os2Display aarhus templates",
+            "support": {
+                "source": "https://github.com/aakb/os2display-aarhus-templates/tree/1.0.6"
+            },
+            "time": "2017-10-23T10:48:32+00:00"
+        },
         {
             "name": "cocur/slugify",
             "version": "v2.5",
