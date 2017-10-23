@@ -49,3 +49,6 @@ parameters:
     itk_log_log_level: all
 
     search_filter_default: all
+
+    koba_apikey: SomeApiKey
+    koba_path: 'http://something'

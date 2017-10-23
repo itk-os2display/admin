@@ -39,6 +39,7 @@ class AppKernel extends Kernel
             new Os2Display\DefaultTemplateBundle\Os2DisplayDefaultTemplateBundle(),
 
             new Itk\AarhusTemplateBundle\ItkAarhusTemplateBundle(),
+            new Itk\KobaIntegrationBundle\ItkKobaIntegrationBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test', 'acceptance'))) {
