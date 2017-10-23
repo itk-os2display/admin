@@ -51,4 +51,4 @@ parameters:
     search_filter_default: all
 
     koba_apikey: SomeApiKey
-    koba_path: 'http://something'
+    koba_path: 'http://127.0.0.1'
