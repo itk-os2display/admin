@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1b2308f7ffa7d6b4f23743abcd8b66eb",
+    "content-hash": "fba08bbc14415ed853ffd47b17724e0c",
     "packages": [
         {
             "name": "aakb/os2display-aarhus-templates",
@@ -2706,13 +2706,13 @@
             "version": "1.0.9",
             "source": {
                 "type": "git",
-                "url": "https://github.com/os2display/admin-bundle.git",
-                "reference": "49034a550e1dc6f95b510773a84ca69fe2f99f5a"
+                "url": "https://github.com/itk-os2display/admin-bundle.git",
+                "reference": "87bf5de39cd46a8435071f2c0c06f925f22bfd06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/os2display/admin-bundle/zipball/49034a550e1dc6f95b510773a84ca69fe2f99f5a",
-                "reference": "49034a550e1dc6f95b510773a84ca69fe2f99f5a",
+                "url": "https://api.github.com/repos/itk-os2display/admin-bundle/zipball/87bf5de39cd46a8435071f2c0c06f925f22bfd06",
+                "reference": "87bf5de39cd46a8435071f2c0c06f925f22bfd06",
                 "shasum": ""
             },
             "require": {
@@ -2734,16 +2734,16 @@
         },
         {
             "name": "os2display/core-bundle",
-            "version": "1.0.9",
+            "version": "1.0.10",
             "source": {
                 "type": "git",
-                "url": "https://github.com/os2display/core-bundle.git",
-                "reference": "fcc41098dbfc2697a5b11c3b5350dca35fec9b56"
+                "url": "https://github.com/itk-os2display/core-bundle.git",
+                "reference": "8369d206b231ce946759b839409b6ac6fb55fdc9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/os2display/core-bundle/zipball/fcc41098dbfc2697a5b11c3b5350dca35fec9b56",
-                "reference": "fcc41098dbfc2697a5b11c3b5350dca35fec9b56",
+                "url": "https://api.github.com/repos/itk-os2display/core-bundle/zipball/8369d206b231ce946759b839409b6ac6fb55fdc9",
+                "reference": "8369d206b231ce946759b839409b6ac6fb55fdc9",
                 "shasum": ""
             },
             "require": {
@@ -2783,23 +2783,22 @@
             },
             "description": "Os2Display core",
             "support": {
-                "source": "https://github.com/os2display/core-bundle/tree/1.0.9",
-                "issues": "https://github.com/os2display/core-bundle/issues"
+                "source": "https://github.com/itk-os2display/core-bundle/tree/1.0.10"
             },
-            "time": "2017-10-13T18:11:29+00:00"
+            "time": "2017-10-30T07:41:29+00:00"
         },
         {
             "name": "os2display/default-template-bundle",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/os2display/default-template-bundle.git",
-                "reference": "88b4c6a67723417637204db6ac910994f27fa20e"
+                "url": "https://github.com/itk-os2display/default-template-bundle.git",
+                "reference": "6d91267a2a35f275380d1b1a8ab2c4784177d976"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/os2display/default-template-bundle/zipball/88b4c6a67723417637204db6ac910994f27fa20e",
-                "reference": "88b4c6a67723417637204db6ac910994f27fa20e",
+                "url": "https://api.github.com/repos/itk-os2display/default-template-bundle/zipball/6d91267a2a35f275380d1b1a8ab2c4784177d976",
+                "reference": "6d91267a2a35f275380d1b1a8ab2c4784177d976",
                 "shasum": ""
             },
             "require": {
@@ -2813,22 +2812,21 @@
             },
             "description": "Os2Display default template",
             "support": {
-                "source": "https://github.com/os2display/default-template-bundle/tree/1.0.3",
-                "issues": "https://github.com/os2display/default-template-bundle/issues"
+                "source": "https://github.com/itk-os2display/default-template-bundle/tree/1.0.4"
             },
-            "time": "2017-09-21T10:27:01+00:00"
+            "time": "2017-10-30T07:45:10+00:00"
         },
         {
             "name": "os2display/media-bundle",
             "version": "1.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/os2display/media-bundle.git",
+                "url": "https://github.com/itk-os2display/media-bundle.git",
                 "reference": "039a6f602cf75846334c08137d009e04609e9905"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/os2display/media-bundle/zipball/039a6f602cf75846334c08137d009e04609e9905",
+                "url": "https://api.github.com/repos/itk-os2display/media-bundle/zipball/039a6f602cf75846334c08137d009e04609e9905",
                 "reference": "039a6f602cf75846334c08137d009e04609e9905",
                 "shasum": ""
             },
