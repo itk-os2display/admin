@@ -2707,12 +2707,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-os2display/admin-bundle.git",
-                "reference": "49034a550e1dc6f95b510773a84ca69fe2f99f5a"
+                "reference": "87bf5de39cd46a8435071f2c0c06f925f22bfd06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-os2display/admin-bundle/zipball/49034a550e1dc6f95b510773a84ca69fe2f99f5a",
-                "reference": "49034a550e1dc6f95b510773a84ca69fe2f99f5a",
+                "url": "https://api.github.com/repos/itk-os2display/admin-bundle/zipball/87bf5de39cd46a8435071f2c0c06f925f22bfd06",
+                "reference": "87bf5de39cd46a8435071f2c0c06f925f22bfd06",
                 "shasum": ""
             },
             "require": {
