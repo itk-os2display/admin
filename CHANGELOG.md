@@ -1,1 +1,6 @@
-See the shared changelog: https://github.com/os2display/docs/blob/master/CHANGELOG.md
+# Aroskanalen CHANGELOG
+
+## 5.0.1
+
+* Upgraded to 5.x structure.
+* Added migration to fix types from ik_grouping

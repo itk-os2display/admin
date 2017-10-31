@@ -1,5 +1,31 @@
 # UPGRADELOG
 
+## 4.2.4 => 5.0.1
+
+```sh
+composer install
+
+# parameters.yml - set version: 5.0.1:
+nano app/config/parameters.yml
+
+app/console doctrine:migrations:migrate
+
+app/console os2display:core:templates:load
+
+# change nginx, set:
+# location /bundles/ {
+#   add_header 'Access-Control-Allow-Origin' "*";
+# }
+
+sudo service nginx reload
+
+# change cron, from  ik:cron to os2display:core:cron
+#  */7 * * * * /usr/bin/php /home/www/[SITE]/admin/app/console --env=prod os2display:core:cron > /dev/null 2>&1
+
+# flush search index for site
+app/console os2display:core:reindex
+```
+
 ## v4.x => 5.0.0
 
 The major change in the this release is that all code has been removed from the
