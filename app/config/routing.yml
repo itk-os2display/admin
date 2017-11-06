@@ -1,3 +1,7 @@
+itk_koba_integration:
+  resource: "@ItkKobaIntegrationBundle/Resources/config/routing.yml"
+  prefix:   /
+
 os2display_main:
   resource: "@Os2DisplayCoreBundle/Resources/config/routing.yml"
   prefix:   /
