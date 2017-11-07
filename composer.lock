@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d83c6126e5ec1cf3e908241a1412c6a9",
+    "content-hash": "4625a0143df86441525dd594ef18e159",
     "packages": [
         {
             "name": "aakb/os2display-aarhus-templates",
@@ -1543,16 +1543,16 @@
         },
         {
             "name": "itk-os2display/lokalcenter-template-bundle",
-            "version": "0.0.2",
+            "version": "0.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-os2display/lokalcenter-template-bundle.git",
-                "reference": "15b93ea627e42cf2f9010db965072e2034d0d797"
+                "reference": "d6e0d7153df1a23be40df408c358adf849faa04f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-os2display/lokalcenter-template-bundle/zipball/15b93ea627e42cf2f9010db965072e2034d0d797",
-                "reference": "15b93ea627e42cf2f9010db965072e2034d0d797",
+                "url": "https://api.github.com/repos/itk-os2display/lokalcenter-template-bundle/zipball/d6e0d7153df1a23be40df408c358adf849faa04f",
+                "reference": "d6e0d7153df1a23be40df408c358adf849faa04f",
                 "shasum": ""
             },
             "require": {
@@ -1567,9 +1567,9 @@
             },
             "description": "Os2Display Lokalcenter templates",
             "support": {
-                "source": "https://github.com/itk-os2display/lokalcenter-template-bundle/tree/0.0.2"
+                "source": "https://github.com/itk-os2display/lokalcenter-template-bundle/tree/0.0.3"
             },
-            "time": "2017-11-07T10:30:57+00:00"
+            "time": "2017-11-07T11:28:00+00:00"
         },
         {
             "name": "itk-os2display/os2display-koba-integration",
