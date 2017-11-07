@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fba08bbc14415ed853ffd47b17724e0c",
+    "content-hash": "d83c6126e5ec1cf3e908241a1412c6a9",
     "packages": [
         {
             "name": "aakb/os2display-aarhus-templates",
@@ -1542,6 +1542,36 @@
             "time": "2014-11-20T16:49:30+00:00"
         },
         {
+            "name": "itk-os2display/lokalcenter-template-bundle",
+            "version": "0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-os2display/lokalcenter-template-bundle.git",
+                "reference": "15b93ea627e42cf2f9010db965072e2034d0d797"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-os2display/lokalcenter-template-bundle/zipball/15b93ea627e42cf2f9010db965072e2034d0d797",
+                "reference": "15b93ea627e42cf2f9010db965072e2034d0d797",
+                "shasum": ""
+            },
+            "require": {
+                "itk-os2display/quill-editor-bundle": "^1.0",
+                "os2display/core-bundle": "^1.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Itk\\LokalcenterTemplateBundle\\": ""
+                }
+            },
+            "description": "Os2Display Lokalcenter templates",
+            "support": {
+                "source": "https://github.com/itk-os2display/lokalcenter-template-bundle/tree/0.0.2"
+            },
+            "time": "2017-11-07T10:30:57+00:00"
+        },
+        {
             "name": "itk-os2display/os2display-koba-integration",
             "version": "1.0.5",
             "source": {
@@ -1570,6 +1600,37 @@
                 "issues": "https://github.com/itk-os2display/os2display-koba-integration/issues"
             },
             "time": "2017-10-23T11:03:32+00:00"
+        },
+        {
+            "name": "itk-os2display/quill-editor-bundle",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-os2display/quill-editor-bundle.git",
+                "reference": "cf4782780aeb48537b1fdc4983ee560645ae6be1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-os2display/quill-editor-bundle/zipball/cf4782780aeb48537b1fdc4983ee560645ae6be1",
+                "reference": "cf4782780aeb48537b1fdc4983ee560645ae6be1",
+                "shasum": ""
+            },
+            "require": {
+                "os2display/admin-bundle": "^1.0",
+                "os2display/core-bundle": "^1.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Itk\\QuillEditorBundle\\": ""
+                }
+            },
+            "description": "Os2Display Quill editor",
+            "support": {
+                "source": "https://github.com/itk-os2display/quill-editor-bundle/tree/1.0.0",
+                "issues": "https://github.com/itk-os2display/quill-editor-bundle/issues"
+            },
+            "time": "2017-11-06T12:16:22+00:00"
         },
         {
             "name": "jdorn/sql-formatter",

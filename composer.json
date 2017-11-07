@@ -47,6 +47,14 @@
       "type": "vcs",
       "url": "https://github.com/itk-os2display/os2display-koba-integration"
     },
+    "itk-os2display/quill-editor-bundle": {
+      "type": "vcs",
+      "url": "https://github.com/itk-os2display/quill-editor-bundle"
+    },
+    "itk-os2display/lokalcenter-template-bundle": {
+      "type": "vcs",
+      "url": "https://github.com/itk-os2display/lokalcenter-template-bundle"
+    },
     "aakb/os2display-aarhus-templates": {
       "type": "vcs",
       "url": "https://github.com/aakb/os2display-aarhus-templates"
