@@ -1,5 +1,9 @@
 # Aroskanalen CHANGELOG
 
+## 5.0.4
+
+* Updated core-bundle to 1.0.12. Fixes video encoding.
+
 ## 5.0.3
 
 * Updated core-bundle to 1.0.11. Fixes shared channel issue.
