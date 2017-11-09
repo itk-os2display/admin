@@ -6027,16 +6027,16 @@
         },
         {
             "name": "itk-os2display/lokalcenter-template-bundle",
-            "version": "0.0.4",
+            "version": "0.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-os2display/lokalcenter-template-bundle.git",
-                "reference": "6ae40cf3153d057fe87e1689d894695b3509e710"
+                "reference": "42523d0262b1b869aae603e2a5a9b7e424d4b8cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-os2display/lokalcenter-template-bundle/zipball/6ae40cf3153d057fe87e1689d894695b3509e710",
-                "reference": "6ae40cf3153d057fe87e1689d894695b3509e710",
+                "url": "https://api.github.com/repos/itk-os2display/lokalcenter-template-bundle/zipball/42523d0262b1b869aae603e2a5a9b7e424d4b8cb",
+                "reference": "42523d0262b1b869aae603e2a5a9b7e424d4b8cb",
                 "shasum": ""
             },
             "require": {
@@ -6051,9 +6051,9 @@
             },
             "description": "Os2Display Lokalcenter templates",
             "support": {
-                "source": "https://github.com/itk-os2display/lokalcenter-template-bundle/tree/0.0.4"
+                "source": "https://github.com/itk-os2display/lokalcenter-template-bundle/tree/0.0.5"
             },
-            "time": "2017-11-07T12:02:56+00:00"
+            "time": "2017-11-09T14:05:47+00:00"
         },
         {
             "name": "itk-os2display/quill-editor-bundle",
