@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bca884761136ca5ce23be4aa956c031d",
+    "content-hash": "b3329c2b51a862bf882cb54925b93ef4",
     "packages": [
         {
             "name": "aakb/os2display-aarhus-templates",
@@ -6027,20 +6027,20 @@
         },
         {
             "name": "itk-os2display/lokalcenter-template-bundle",
-            "version": "0.1.4",
+            "version": "0.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-os2display/lokalcenter-template-bundle.git",
-                "reference": "259a8d09c2ed55dab3fa0f26d94a6ee5840a464c"
+                "reference": "75ed18ee36e6bbb19da70f9d75913211a0b75fe2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-os2display/lokalcenter-template-bundle/zipball/259a8d09c2ed55dab3fa0f26d94a6ee5840a464c",
-                "reference": "259a8d09c2ed55dab3fa0f26d94a6ee5840a464c",
+                "url": "https://api.github.com/repos/itk-os2display/lokalcenter-template-bundle/zipball/75ed18ee36e6bbb19da70f9d75913211a0b75fe2",
+                "reference": "75ed18ee36e6bbb19da70f9d75913211a0b75fe2",
                 "shasum": ""
             },
             "require": {
-                "itk-os2display/quill-editor-bundle": "^1.0",
+                "itk-os2display/template-extension-bundle": "^1.0",
                 "os2display/core-bundle": "^1.0"
             },
             "type": "symfony-bundle",
@@ -6051,40 +6051,40 @@
             },
             "description": "Os2Display Lokalcenter templates",
             "support": {
-                "source": "https://github.com/itk-os2display/lokalcenter-template-bundle/tree/0.1.4"
+                "source": "https://github.com/itk-os2display/lokalcenter-template-bundle/tree/0.1.5"
             },
-            "time": "2017-11-13T10:05:45+00:00"
+            "time": "2017-11-15T08:29:24+00:00"
         },
         {
-            "name": "itk-os2display/quill-editor-bundle",
-            "version": "1.0.0",
+            "name": "itk-os2display/template-extension-bundle",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/itk-os2display/quill-editor-bundle.git",
-                "reference": "cf4782780aeb48537b1fdc4983ee560645ae6be1"
+                "url": "https://github.com/itk-os2display/template-extension-bundle.git",
+                "reference": "6c965596398d38c13cb5188cc479eba09c47cc0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-os2display/quill-editor-bundle/zipball/cf4782780aeb48537b1fdc4983ee560645ae6be1",
-                "reference": "cf4782780aeb48537b1fdc4983ee560645ae6be1",
+                "url": "https://api.github.com/repos/itk-os2display/template-extension-bundle/zipball/6c965596398d38c13cb5188cc479eba09c47cc0b",
+                "reference": "6c965596398d38c13cb5188cc479eba09c47cc0b",
                 "shasum": ""
             },
             "require": {
-                "os2display/admin-bundle": "^1.0",
+                "os2display/admin-bundle": "^1.0.10",
                 "os2display/core-bundle": "^1.0"
             },
             "type": "symfony-bundle",
             "autoload": {
                 "psr-4": {
-                    "Itk\\QuillEditorBundle\\": ""
+                    "Itk\\TemplateExtensionBundle\\": ""
                 }
             },
-            "description": "Os2Display Quill editor",
+            "description": "Os2Display Template Extension Bundle contains tools for templates.",
             "support": {
-                "source": "https://github.com/itk-os2display/quill-editor-bundle/tree/1.0.0",
-                "issues": "https://github.com/itk-os2display/quill-editor-bundle/issues"
+                "source": "https://github.com/itk-os2display/template-extension-bundle/tree/1.1.1",
+                "issues": "https://github.com/itk-os2display/template-extension-bundle/issues"
             },
-            "time": "2017-11-06T12:16:22+00:00"
+            "time": "2017-11-15T09:28:25+00:00"
         },
         {
             "name": "justinrainbow/json-schema",

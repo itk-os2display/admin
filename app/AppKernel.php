@@ -40,7 +40,7 @@ class AppKernel extends Kernel
 
             new Itk\AarhusTemplateBundle\ItkAarhusTemplateBundle(),
             new Itk\KobaIntegrationBundle\ItkKobaIntegrationBundle(),
-            new Itk\QuillEditorBundle\ItkQuillEditorBundle(),
+            new Itk\TemplateExtensionBundle\ItkTemplateExtensionBundle(),
             new Itk\LokalcenterTemplateBundle\ItkLokalcenterTemplateBundle(),
         );
 
