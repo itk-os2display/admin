@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "aakb/os2display-aarhus-templates",
-            "version": "1.0.8",
+            "version": "1.0.9",
             "source": {
                 "type": "git",
                 "url": "git@github.com:aakb/os2display-aarhus-templates.git",
-                "reference": "c98c47e0137a400b3302b8c7c024b1b0f2e57cdc"
+                "reference": "60cd34f494944f8bffc863cae813103322c7bd5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aakb/os2display-aarhus-templates/zipball/c98c47e0137a400b3302b8c7c024b1b0f2e57cdc",
-                "reference": "c98c47e0137a400b3302b8c7c024b1b0f2e57cdc",
+                "url": "https://api.github.com/repos/aakb/os2display-aarhus-templates/zipball/60cd34f494944f8bffc863cae813103322c7bd5e",
+                "reference": "60cd34f494944f8bffc863cae813103322c7bd5e",
                 "shasum": ""
             },
             "require": {
@@ -31,9 +31,9 @@
             },
             "description": "Os2Display aarhus templates",
             "support": {
-                "source": "https://github.com/aakb/os2display-aarhus-templates/tree/1.0.8"
+                "source": "https://github.com/aakb/os2display-aarhus-templates/tree/1.0.9"
             },
-            "time": "2017-10-23T11:35:36+00:00"
+            "time": "2017-11-15T11:43:46+00:00"
         },
         {
             "name": "cocur/slugify",
