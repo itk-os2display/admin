@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b3329c2b51a862bf882cb54925b93ef4",
+    "content-hash": "f27e85e3c3d5515f284acc72e4abdf4a",
     "packages": [
         {
             "name": "aakb/os2display-aarhus-templates",
@@ -1542,6 +1542,36 @@
             "time": "2014-11-20T16:49:30+00:00"
         },
         {
+            "name": "itk-os2display/lokalcenter-template-bundle",
+            "version": "0.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-os2display/lokalcenter-template-bundle.git",
+                "reference": "23d4bd4317433f45e351b68e2d1eee6d042ca5fc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-os2display/lokalcenter-template-bundle/zipball/23d4bd4317433f45e351b68e2d1eee6d042ca5fc",
+                "reference": "23d4bd4317433f45e351b68e2d1eee6d042ca5fc",
+                "shasum": ""
+            },
+            "require": {
+                "itk-os2display/template-extension-bundle": "^1.1.3",
+                "os2display/core-bundle": "^1.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Itk\\LokalcenterTemplateBundle\\": ""
+                }
+            },
+            "description": "Os2Display Lokalcenter templates",
+            "support": {
+                "source": "https://github.com/itk-os2display/lokalcenter-template-bundle/tree/0.1.6"
+            },
+            "time": "2017-11-17T14:03:50+00:00"
+        },
+        {
             "name": "itk-os2display/os2display-koba-integration",
             "version": "1.0.5",
             "source": {
@@ -1570,6 +1600,37 @@
                 "issues": "https://github.com/itk-os2display/os2display-koba-integration/issues"
             },
             "time": "2017-10-23T11:03:32+00:00"
+        },
+        {
+            "name": "itk-os2display/template-extension-bundle",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-os2display/template-extension-bundle.git",
+                "reference": "32e09f32439621deaaa4eecb35ba1005ab809585"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-os2display/template-extension-bundle/zipball/32e09f32439621deaaa4eecb35ba1005ab809585",
+                "reference": "32e09f32439621deaaa4eecb35ba1005ab809585",
+                "shasum": ""
+            },
+            "require": {
+                "os2display/admin-bundle": "^1.0.10",
+                "os2display/core-bundle": "^1.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Itk\\TemplateExtensionBundle\\": ""
+                }
+            },
+            "description": "Os2Display Template Extension Bundle contains tools for templates.",
+            "support": {
+                "source": "https://github.com/itk-os2display/template-extension-bundle/tree/1.1.3",
+                "issues": "https://github.com/itk-os2display/template-extension-bundle/issues"
+            },
+            "time": "2017-11-17T13:58:06+00:00"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -6024,67 +6085,6 @@
                 "webtest"
             ],
             "time": "2017-06-30T04:02:48+00:00"
-        },
-        {
-            "name": "itk-os2display/lokalcenter-template-bundle",
-            "version": "0.1.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/itk-os2display/lokalcenter-template-bundle.git",
-                "reference": "75ed18ee36e6bbb19da70f9d75913211a0b75fe2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/itk-os2display/lokalcenter-template-bundle/zipball/75ed18ee36e6bbb19da70f9d75913211a0b75fe2",
-                "reference": "75ed18ee36e6bbb19da70f9d75913211a0b75fe2",
-                "shasum": ""
-            },
-            "require": {
-                "itk-os2display/template-extension-bundle": "^1.0",
-                "os2display/core-bundle": "^1.0"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "Itk\\LokalcenterTemplateBundle\\": ""
-                }
-            },
-            "description": "Os2Display Lokalcenter templates",
-            "support": {
-                "source": "https://github.com/itk-os2display/lokalcenter-template-bundle/tree/0.1.5"
-            },
-            "time": "2017-11-15T08:29:24+00:00"
-        },
-        {
-            "name": "itk-os2display/template-extension-bundle",
-            "version": "1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/itk-os2display/template-extension-bundle.git",
-                "reference": "6c965596398d38c13cb5188cc479eba09c47cc0b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/itk-os2display/template-extension-bundle/zipball/6c965596398d38c13cb5188cc479eba09c47cc0b",
-                "reference": "6c965596398d38c13cb5188cc479eba09c47cc0b",
-                "shasum": ""
-            },
-            "require": {
-                "os2display/admin-bundle": "^1.0.10",
-                "os2display/core-bundle": "^1.0"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "Itk\\TemplateExtensionBundle\\": ""
-                }
-            },
-            "description": "Os2Display Template Extension Bundle contains tools for templates.",
-            "support": {
-                "source": "https://github.com/itk-os2display/template-extension-bundle/tree/1.1.1",
-                "issues": "https://github.com/itk-os2display/template-extension-bundle/issues"
-            },
-            "time": "2017-11-15T09:28:25+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
