@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "aakb/os2display-aarhus-templates",
-            "version": "1.0.9",
+            "version": "1.0.10",
             "source": {
                 "type": "git",
                 "url": "git@github.com:aakb/os2display-aarhus-templates.git",
-                "reference": "60cd34f494944f8bffc863cae813103322c7bd5e"
+                "reference": "08a924ca803fa9eba24715c471dced10a6ceafe5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aakb/os2display-aarhus-templates/zipball/60cd34f494944f8bffc863cae813103322c7bd5e",
-                "reference": "60cd34f494944f8bffc863cae813103322c7bd5e",
+                "url": "https://api.github.com/repos/aakb/os2display-aarhus-templates/zipball/08a924ca803fa9eba24715c471dced10a6ceafe5",
+                "reference": "08a924ca803fa9eba24715c471dced10a6ceafe5",
                 "shasum": ""
             },
             "require": {
@@ -31,9 +31,9 @@
             },
             "description": "Os2Display aarhus templates",
             "support": {
-                "source": "https://github.com/aakb/os2display-aarhus-templates/tree/1.0.9"
+                "source": "https://github.com/aakb/os2display-aarhus-templates/tree/1.1.10"
             },
-            "time": "2017-11-15T11:43:46+00:00"
+            "time": "2017-11-20T08:14:40+00:00"
         },
         {
             "name": "cocur/slugify",
