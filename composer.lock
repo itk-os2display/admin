@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f27e85e3c3d5515f284acc72e4abdf4a",
+    "content-hash": "0fec60a26ac315c7897508d790fed555",
     "packages": [
         {
             "name": "aakb/os2display-aarhus-templates",
@@ -1540,6 +1540,69 @@
                 "password"
             ],
             "time": "2014-11-20T16:49:30+00:00"
+        },
+        {
+            "name": "itk-os2display/aarhus-data-bundle",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-os2display/aarhus-data-bundle.git",
+                "reference": "5d015a345296862d5a7d4ddc2a3a8ebe26f3c6d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-os2display/aarhus-data-bundle/zipball/5d015a345296862d5a7d4ddc2a3a8ebe26f3c6d1",
+                "reference": "5d015a345296862d5a7d4ddc2a3a8ebe26f3c6d1",
+                "shasum": ""
+            },
+            "require": {
+                "itk-os2display/template-extension-bundle": "^1.0",
+                "os2display/admin-bundle": "^1.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Itk\\AarhusDataBundle\\": ""
+                }
+            },
+            "description": "Os2Display aarhus data",
+            "support": {
+                "source": "https://github.com/itk-os2display/aarhus-data-bundle/tree/0.0.1",
+                "issues": "https://github.com/itk-os2display/aarhus-data-bundle/issues"
+            },
+            "time": "2017-11-22T07:23:01+00:00"
+        },
+        {
+            "name": "itk-os2display/aarhus-second-template-bundle",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-os2display/aarhus-second-template-bundle.git",
+                "reference": "3fe87debf559e22d387840762639abb3a1f6808a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-os2display/aarhus-second-template-bundle/zipball/3fe87debf559e22d387840762639abb3a1f6808a",
+                "reference": "3fe87debf559e22d387840762639abb3a1f6808a",
+                "shasum": ""
+            },
+            "require": {
+                "itk-os2display/template-extension-bundle": "^1.0",
+                "os2display/core-bundle": "^1.0",
+                "os2display/default-template-bundle": "^1.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Itk\\AarhusSecondTemplateBundle\\": ""
+                }
+            },
+            "description": "Os2Display Aarhus templates",
+            "support": {
+                "source": "https://github.com/itk-os2display/aarhus-second-template-bundle/tree/0.0.1",
+                "issues": "https://github.com/itk-os2display/aarhus-second-template-bundle/issues"
+            },
+            "time": "2017-11-21T14:10:04+00:00"
         },
         {
             "name": "itk-os2display/lokalcenter-template-bundle",
