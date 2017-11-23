@@ -2,6 +2,10 @@ itk_koba_integration:
   resource: "@ItkKobaIntegrationBundle/Resources/config/routing.yml"
   prefix:   /
 
+itk_aarhus_data:
+    resource: "@ItkAarhusDataBundle/Resources/config/routing.yml"
+    prefix:   /api
+
 os2display_main:
   resource: "@Os2DisplayCoreBundle/Resources/config/routing.yml"
   prefix:   /
