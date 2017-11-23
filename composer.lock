@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8c91f15854ad3291ada1701d509ce09d",
+    "content-hash": "b683c79c42470ce079704a7bafd8735b",
     "packages": [
         {
             "name": "aakb/os2display-aarhus-templates",
@@ -1574,16 +1574,16 @@
         },
         {
             "name": "itk-os2display/aarhus-second-template-bundle",
-            "version": "0.0.1",
+            "version": "0.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-os2display/aarhus-second-template-bundle.git",
-                "reference": "3fe87debf559e22d387840762639abb3a1f6808a"
+                "reference": "bf7aa0de658e8fa239ab3fa0626d8aa947f3d893"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-os2display/aarhus-second-template-bundle/zipball/3fe87debf559e22d387840762639abb3a1f6808a",
-                "reference": "3fe87debf559e22d387840762639abb3a1f6808a",
+                "url": "https://api.github.com/repos/itk-os2display/aarhus-second-template-bundle/zipball/bf7aa0de658e8fa239ab3fa0626d8aa947f3d893",
+                "reference": "bf7aa0de658e8fa239ab3fa0626d8aa947f3d893",
                 "shasum": ""
             },
             "require": {
@@ -1599,10 +1599,10 @@
             },
             "description": "Os2Display Aarhus templates",
             "support": {
-                "source": "https://github.com/itk-os2display/aarhus-second-template-bundle/tree/0.0.1",
+                "source": "https://github.com/itk-os2display/aarhus-second-template-bundle/tree/0.0.2",
                 "issues": "https://github.com/itk-os2display/aarhus-second-template-bundle/issues"
             },
-            "time": "2017-11-21T14:10:04+00:00"
+            "time": "2017-11-23T10:53:27+00:00"
         },
         {
             "name": "itk-os2display/lokalcenter-template-bundle",

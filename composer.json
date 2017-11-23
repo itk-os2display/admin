@@ -19,7 +19,7 @@
     "aakb/os2display-aarhus-templates": "^1.0",
     "itk-os2display/lokalcenter-template-bundle": "^0.1.6",
     "itk-os2display/template-extension-bundle": "^1.1.3",
-    "itk-os2display/aarhus-second-template-bundle": "^0.0.1",
+    "itk-os2display/aarhus-second-template-bundle": "^0.0.2",
     "itk-os2display/aarhus-data-bundle": "^0.0.2"
   },
   "require-dev": {
