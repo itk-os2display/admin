@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0fec60a26ac315c7897508d790fed555",
+    "content-hash": "8c91f15854ad3291ada1701d509ce09d",
     "packages": [
         {
             "name": "aakb/os2display-aarhus-templates",
@@ -1543,16 +1543,16 @@
         },
         {
             "name": "itk-os2display/aarhus-data-bundle",
-            "version": "0.0.1",
+            "version": "0.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-os2display/aarhus-data-bundle.git",
-                "reference": "5d015a345296862d5a7d4ddc2a3a8ebe26f3c6d1"
+                "reference": "990e8e244f6cb20d83baa67932057e8a210bff36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-os2display/aarhus-data-bundle/zipball/5d015a345296862d5a7d4ddc2a3a8ebe26f3c6d1",
-                "reference": "5d015a345296862d5a7d4ddc2a3a8ebe26f3c6d1",
+                "url": "https://api.github.com/repos/itk-os2display/aarhus-data-bundle/zipball/990e8e244f6cb20d83baa67932057e8a210bff36",
+                "reference": "990e8e244f6cb20d83baa67932057e8a210bff36",
                 "shasum": ""
             },
             "require": {
@@ -1567,10 +1567,10 @@
             },
             "description": "Os2Display aarhus data",
             "support": {
-                "source": "https://github.com/itk-os2display/aarhus-data-bundle/tree/0.0.1",
+                "source": "https://github.com/itk-os2display/aarhus-data-bundle/tree/0.0.2",
                 "issues": "https://github.com/itk-os2display/aarhus-data-bundle/issues"
             },
-            "time": "2017-11-22T07:23:01+00:00"
+            "time": "2017-11-23T09:33:49+00:00"
         },
         {
             "name": "itk-os2display/aarhus-second-template-bundle",
