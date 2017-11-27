@@ -1,5 +1,14 @@
 # Aroskanalen CHANGELOG
 
+## 5.0.6
+
+* Added lokalcenter-template-bundle.
+* Added aarhus-second-template-bundle.
+* Added aarhus-data-bundle.
+* Added template-extension-bundle.
+* Added script to update custom bundles.
+* Updated custom bundles.
+
 ## 5.0.5
 
 * Updated default-template-bundle.
