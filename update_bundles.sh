@@ -1,0 +1,1 @@
+composer update os2display/core-bundle os2display/admin-bundle os2display/default-template-bundle os2display/media-bundle itk-os2display/aarhus-data-bundle itk-os2display/aarhus-second-template-bundle aakb/os2display-aarhus-templates itk-os2display/template-extension-bundle itk-os2display/lokalcenter-template-bundle
