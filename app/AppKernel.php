@@ -40,6 +40,11 @@ class AppKernel extends Kernel
 
             new Itk\AarhusTemplateBundle\ItkAarhusTemplateBundle(),
             new Itk\KobaIntegrationBundle\ItkKobaIntegrationBundle(),
+            new Itk\TemplateExtensionBundle\ItkTemplateExtensionBundle(),
+            new Itk\LokalcenterTemplateBundle\ItkLokalcenterTemplateBundle(),
+            new Itk\AarhusSecondTemplateBundle\ItkAarhusSecondTemplateBundle(),
+            new Itk\AarhusDataBundle\ItkAarhusDataBundle(),
+
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test', 'acceptance'))) {
