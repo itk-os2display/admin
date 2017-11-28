@@ -1,5 +1,16 @@
 # UPGRADELOG
 
+## 5.0.5 => 5.0.6
+
+```bash
+git fetch
+git checkout 5.0.6
+composer install
+# nano app/config/parameters.yml
+app/console cache:clear --env=prod
+app/console os2display:core:templates:load
+```
+
 ## 4.2.4 => 5.0.1
 
 ```sh
