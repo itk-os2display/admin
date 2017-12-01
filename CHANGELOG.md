@@ -1,5 +1,9 @@
 # Aroskanalen CHANGELOG
 
+## 5.0.7
+
+* Updated lokalcenter-template-bundle to fix issue.
+
 ## 5.0.6
 
 * Added lokalcenter-template-bundle.
