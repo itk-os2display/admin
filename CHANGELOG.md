@@ -1,5 +1,9 @@
 # Aroskanalen CHANGELOG
 
+## 5.0.8
+
+* Updated default-template-bundle to fix issue with slideshow positioning.
+
 ## 5.0.7
 
 * Updated lokalcenter-template-bundle to fix issue.
