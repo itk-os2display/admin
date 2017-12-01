@@ -1607,16 +1607,16 @@
         },
         {
             "name": "itk-os2display/lokalcenter-template-bundle",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-os2display/lokalcenter-template-bundle.git",
-                "reference": "2e58bfbf0dbd4d42237901fc55e2079c0e6f04f3"
+                "reference": "10d3c3f23b5ec326e269e7504e6e1d1ed6fabae2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-os2display/lokalcenter-template-bundle/zipball/2e58bfbf0dbd4d42237901fc55e2079c0e6f04f3",
-                "reference": "2e58bfbf0dbd4d42237901fc55e2079c0e6f04f3",
+                "url": "https://api.github.com/repos/itk-os2display/lokalcenter-template-bundle/zipball/10d3c3f23b5ec326e269e7504e6e1d1ed6fabae2",
+                "reference": "10d3c3f23b5ec326e269e7504e6e1d1ed6fabae2",
                 "shasum": ""
             },
             "require": {
@@ -1631,9 +1631,9 @@
             },
             "description": "Os2Display Lokalcenter templates",
             "support": {
-                "source": "https://github.com/itk-os2display/lokalcenter-template-bundle/tree/1.0.3"
+                "source": "https://github.com/itk-os2display/lokalcenter-template-bundle/tree/1.0.4"
             },
-            "time": "2017-12-01T10:21:11+00:00"
+            "time": "2017-12-01T11:09:23+00:00"
         },
         {
             "name": "itk-os2display/os2display-koba-integration",
