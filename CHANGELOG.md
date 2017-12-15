@@ -1,5 +1,9 @@
 # Aroskanalen CHANGELOG
 
+## 5.0.9
+
+* Updated aarhus-second-template-bundle to fix issues with countdown.
+
 ## 5.0.8
 
 * Updated default-template-bundle to fix issue with slideshow positioning.
