@@ -1,8 +1,12 @@
 # Aroskanalen CHANGELOG
 
-## 5.0.9
+## 5.0.10
 
 * Updated aarhus-second-template-bundle to fix issues with countdown.
+
+## 5.0.9
+
+?
 
 ## 5.0.8
 
