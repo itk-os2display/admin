@@ -2,12 +2,12 @@
 
 namespace Indholdskanalen\MainBundle\DataFixtures\ORM;
 
-use Application\Sonata\MediaBundle\Entity\Media;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Persistence\ObjectManager;
-use Indholdskanalen\MainBundle\Entity\Group;
-use Indholdskanalen\MainBundle\Entity\GroupableEntity;
-use Indholdskanalen\MainBundle\Entity\User;
+use Os2Display\CoreBundle\Entity\Group;
+use Os2Display\CoreBundle\Entity\GroupableEntity;
+use Os2Display\CoreBundle\Entity\User;
+use Os2Display\MediaBundle\Entity\Media;
 use Symfony\Bridge\Doctrine\Tests\Fixtures\ContainerAwareFixture;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Yaml\Yaml;

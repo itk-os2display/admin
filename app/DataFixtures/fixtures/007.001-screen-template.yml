@@ -1,5 +1,5 @@
 ---
-class: Indholdskanalen\MainBundle\Entity\ScreenTemplate
+class: Os2Display\CoreBundle\Entity\ScreenTemplate
 
 defaults:
     enabled: 1

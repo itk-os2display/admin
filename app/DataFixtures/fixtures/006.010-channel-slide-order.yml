@@ -1,5 +1,5 @@
 ---
-class: Indholdskanalen\MainBundle\Entity\ChannelSlideOrder
+class: Os2Display\CoreBundle\Entity\ChannelSlideOrder
 
 entities:
   -

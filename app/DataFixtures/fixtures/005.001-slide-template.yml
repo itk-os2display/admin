@@ -1,5 +1,5 @@
 ---
-class: Indholdskanalen\MainBundle\Entity\SlideTemplate
+class: Os2Display\CoreBundle\Entity\SlideTemplate
 
 defaults:
   enabled: 1

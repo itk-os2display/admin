@@ -1,5 +1,5 @@
 ---
-class: Indholdskanalen\MainBundle\Entity\MediaOrder
+class: Os2Display\CoreBundle\Entity\MediaOrder
 
 defaults:
   sortOrder: 0

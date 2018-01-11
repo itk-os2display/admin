@@ -1,5 +1,5 @@
 ---
-class: Indholdskanalen\MainBundle\Entity\Screen
+class: Os2Display\CoreBundle\Entity\Screen
 
 entities:
   -

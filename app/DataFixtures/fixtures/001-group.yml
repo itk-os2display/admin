@@ -1,5 +1,5 @@
 ---
-class: Indholdskanalen\MainBundle\Entity\Group
+class: Os2Display\CoreBundle\Entity\Group
 
 entities:
   -

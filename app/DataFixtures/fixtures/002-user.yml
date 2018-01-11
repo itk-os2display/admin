@@ -1,5 +1,5 @@
 ---
-class: Indholdskanalen\MainBundle\Entity\User
+class: Os2Display\CoreBundle\Entity\User
 
 defaults:
   enabled: true
@@ -7,29 +7,36 @@ defaults:
 entities:
   -
     email: super-admin@example.com
+    username: super-admin
     plain_password: password
     roles: [ROLE_SUPER_ADMIN]
   -
     email: admin@example.com
+    username: admin
     plain_password: password
     roles: [ROLE_ADMIN]
   -
     email: group-admin@example.com
+    username: group-admin
     plain_password: password
     roles: [ROLE_GROUP_ADMIN]
   -
     email: user-admin@example.com
+    username: user-admin
     plain_password: password
     roles: [ROLE_USER_ADMIN]
   -
     email: user@example.com
+    username: user
     plain_password: password
     roles: [ROLE_USER]
   -
     email: user123@example.com
+    username: user123
     plain_password: password
     roles: [ROLE_USER]
   -
     email: user124@example.com
+    username: user124
     plain_password: password
     roles: [ROLE_USER]

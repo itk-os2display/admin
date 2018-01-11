@@ -1,5 +1,5 @@
 ---
-class: Indholdskanalen\MainBundle\Entity\Slide
+class: Os2Display\CoreBundle\Entity\Slide
 
 defaults:
   template: text-top

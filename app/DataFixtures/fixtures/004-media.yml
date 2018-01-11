@@ -1,5 +1,5 @@
 ---
-class: Application\Sonata\MediaBundle\Entity\Media
+class: Os2Display\MediaBundle\Entity\Media
 
 defaults:
   provider_name: sonata.media.provider.image
