@@ -1,6 +1,6 @@
 {
   "name": "os2display/admin",
-  "license": "GNU General Public License v3.0",
+  "license": "GPL-3.0-only",
   "type": "project",
   "description": "The Os2Display distribution",
   "autoload": {
