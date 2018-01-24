@@ -33,7 +33,7 @@ Before loading fixtures we have to make sure that a search index is active.
 First make sure that the `search_node` service is running:
 
 ```
-sudo service search_node stop && sudo service search_node start
+sudo service search_node stop; sudo service search_node start
 ```
 
 Then we can activate the sample index like this:
