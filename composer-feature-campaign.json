@@ -21,7 +21,8 @@
     "itk-os2display/template-extension-bundle": "dev-feature/campaign",
     "itk-os2display/aarhus-second-template-bundle": "dev-feature/campaign",
     "itk-os2display/aarhus-data-bundle": "dev-feature/campaign",
-    "itk-os2display/campaign-bundle": "dev-feature/campaign"
+    "itk-os2display/campaign-bundle": "dev-feature/campaign",
+    "os2display/core-bundle": "dev-feature/campaign"
   },
   "require-dev": {
     "sensio/generator-bundle": "^2.3",
@@ -112,5 +113,6 @@
       "dev-master": "2.5-dev"
     }
   },
-  "minimum-stability": "dev"
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
