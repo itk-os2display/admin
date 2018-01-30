@@ -1735,12 +1735,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-os2display/campaign-bundle.git",
-                "reference": "ebe3602d05493c4960546686e131e8aebde45137"
+                "reference": "63b9d34637fadf5e8d687c355980dabc7ec442e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-os2display/campaign-bundle/zipball/ebe3602d05493c4960546686e131e8aebde45137",
-                "reference": "ebe3602d05493c4960546686e131e8aebde45137",
+                "url": "https://api.github.com/repos/itk-os2display/campaign-bundle/zipball/63b9d34637fadf5e8d687c355980dabc7ec442e1",
+                "reference": "63b9d34637fadf5e8d687c355980dabc7ec442e1",
                 "shasum": ""
             },
             "require": {
@@ -1766,7 +1766,7 @@
                 "source": "https://github.com/itk-os2display/campaign-bundle/tree/feature/campaign",
                 "issues": "https://github.com/itk-os2display/campaign-bundle/issues"
             },
-            "time": "2018-01-30T09:52:14+00:00"
+            "time": "2018-01-30T14:37:39+00:00"
         },
         {
             "name": "itk-os2display/lokalcenter-template-bundle",
@@ -3023,12 +3023,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-os2display/core-bundle.git",
-                "reference": "f4c0a4cf9a5338b1a9bce0761fbf0e83eaada060"
+                "reference": "0af392341f6f6dc690a5e64d0c2141d7e9a71c8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-os2display/core-bundle/zipball/f4c0a4cf9a5338b1a9bce0761fbf0e83eaada060",
-                "reference": "f4c0a4cf9a5338b1a9bce0761fbf0e83eaada060",
+                "url": "https://api.github.com/repos/itk-os2display/core-bundle/zipball/0af392341f6f6dc690a5e64d0c2141d7e9a71c8e",
+                "reference": "0af392341f6f6dc690a5e64d0c2141d7e9a71c8e",
                 "shasum": ""
             },
             "require": {
@@ -3078,7 +3078,7 @@
             "support": {
                 "source": "https://github.com/itk-os2display/core-bundle/tree/feature/campaign"
             },
-            "time": "2018-01-25T13:28:35+00:00"
+            "time": "2018-01-30T14:39:20+00:00"
         },
         {
             "name": "os2display/default-template-bundle",
@@ -3134,7 +3134,8 @@
             },
             "description": "Os2Display media",
             "support": {
-                "source": "https://github.com/itk-os2display/media-bundle/tree/1.0.2"
+                "source": "https://github.com/os2display/media-bundle/tree/1.0.2",
+                "issues": "https://github.com/os2display/media-bundle/issues"
             },
             "time": "2017-09-19T09:29:02+00:00"
         },
