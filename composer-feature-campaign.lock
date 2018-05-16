@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e8bbab77e071c587954840822d6a762",
+    "content-hash": "da882912b4697323e03ceb412c9e9571",
     "packages": [
         {
             "name": "aakb/os2display-aarhus-templates",
@@ -1663,6 +1663,46 @@
                 "password"
             ],
             "time": "2014-11-20T16:49:30+00:00"
+        },
+        {
+            "name": "itk-dev/database-bundle",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-dev/database-bundle.git",
+                "reference": "0bed2d801e6e9130c3f3e6eb0245d7391a39ca1e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-dev/database-bundle/zipball/0bed2d801e6e9130c3f3e6eb0245d7391a39ca1e",
+                "reference": "0bed2d801e6e9130c3f3e6eb0245d7391a39ca1e",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "^2.5",
+                "symfony/symfony": "^2.8 || ^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ItkDev\\DatabaseBundle\\": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikkel Ricky",
+                    "email": "rimi@aarhus.dk"
+                }
+            ],
+            "description": "A Symfony bundle with useful database stuff",
+            "support": {
+                "source": "https://github.com/itk-dev/database-bundle/tree/1.0.2",
+                "issues": "https://github.com/itk-dev/database-bundle/issues"
+            },
+            "time": "2018-01-30T18:21:04+00:00"
         },
         {
             "name": "itk-os2display/aarhus-data-bundle",
