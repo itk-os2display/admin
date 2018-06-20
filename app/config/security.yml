@@ -6,7 +6,10 @@ security:
     ROLE_ADMIN:
       - ROLE_GROUP_ADMIN
       - ROLE_USER_ADMIN
+      - ROLE_CAMPAIGN_ADMIN
       - ROLE_SONATA_ADMIN
+    ROLE_CAMPAIGN_ADMIN:
+      - ROLE_USER
     ROLE_GROUP_ADMIN:
       - ROLE_USER
     ROLE_USER_ADMIN:
@@ -39,7 +42,7 @@ security:
       context: user
       form_login:
         check_path: /api/login_check
-      entry_point: indholdskanalen_main.api_authentication_service
+      entry_point: os2display.api_authentication_service
 
     zencoder:
       pattern: ^/zencoder/callback
