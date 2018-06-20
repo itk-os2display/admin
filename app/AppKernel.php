@@ -32,22 +32,23 @@ class AppKernel extends Kernel
             new JMS\DiExtraBundle\JMSDiExtraBundle(),
             new JMS\AopBundle\JMSAopBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
 
             new Os2Display\MediaBundle\Os2DisplayMediaBundle(),
             new Os2Display\CoreBundle\Os2DisplayCoreBundle(),
             new Os2Display\AdminBundle\Os2DisplayAdminBundle(),
             new Os2Display\DefaultTemplateBundle\Os2DisplayDefaultTemplateBundle(),
 
-            new Itk\TemplateExtensionBundle\ItkTemplateExtensionBundle(),
-            new Itk\ExchangeBundle\ItkExchangeBundle(),
-
-            new Itk\HorizonTemplateBundle\ItkHorizonTemplateBundle(),
-            new Itk\LokalcenterTemplateBundle\ItkLokalcenterTemplateBundle(),
-            new Itk\AarhusTemplateBundle\ItkAarhusTemplateBundle(),
-            new Itk\AarhusSecondTemplateBundle\ItkAarhusSecondTemplateBundle(),
-            new Itk\AarhusDataBundle\ItkAarhusDataBundle(),
-            new Itk\VimeoBundle\ItkVimeoBundle(),
             new Itk\CampaignBundle\ItkCampaignBundle(),
+
+            new Itk\AarhusDataBundle\ItkAarhusDataBundle(),
+            new Itk\KobaIntegrationBundle\ItkKobaIntegrationBundle(),
+
+            new Itk\TemplateExtensionBundle\ItkTemplateExtensionBundle(),
+            new Itk\AarhusTemplateBundle\ItkAarhusTemplateBundle(),
+            new Itk\LokalcenterTemplateBundle\ItkLokalcenterTemplateBundle(),
+            new Itk\AarhusSecondTemplateBundle\ItkAarhusSecondTemplateBundle(),
+            new Itk\VimeoBundle\ItkVimeoBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test', 'acceptance'))) {
