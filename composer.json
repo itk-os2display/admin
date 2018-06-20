@@ -10,17 +10,20 @@
     }
   },
   "require": {
-    "os2display/admin-bundle": "^1.0",
-    "os2display/default-template-bundle": "^1.0",
     "incenteev/composer-parameter-handler": "^2.0",
     "sonata-project/admin-bundle": "^2.0",
     "sonata-project/doctrine-orm-admin-bundle": "^2.0",
-    "itk-os2display/os2display-koba-integration": "^1.0",
+    "os2display/core-bundle": "^1.1",
+    "os2display/admin-bundle": "^1.1",
+    "os2display/default-template-bundle": "^1.0",
     "aakb/os2display-aarhus-templates": "^1.0",
+    "itk-os2display/os2display-koba-integration": "^1.0",
     "itk-os2display/lokalcenter-template-bundle": "^1.0",
     "itk-os2display/template-extension-bundle": "^1.1",
-    "itk-os2display/aarhus-second-template-bundle": "^1.0",
-    "itk-os2display/aarhus-data-bundle": "^1.0"
+    "itk-os2display/aarhus-second-template-bundle": "^1.1",
+    "itk-os2display/aarhus-data-bundle": "^1.2",
+    "itk-os2display/vimeo-bundle": "^1.0",
+    "itk-os2display/campaign-bundle": "^1.0"
   },
   "require-dev": {
     "sensio/generator-bundle": "^2.3",
@@ -70,6 +73,14 @@
     "itk-os2display/aarhus-data-bundle": {
       "type": "vcs",
       "url": "https://github.com/itk-os2display/aarhus-data-bundle"
+    },
+    "itk-os2display/campaign-bundle": {
+      "type": "vcs",
+      "url": "https://github.com/itk-os2display/campaign-bundle"
+    },
+    "itk-os2display/vimeo-bundle": {
+      "type": "vcs",
+      "url": "https://github.com/itk-os2display/vimeo-bundle"
     }
   },
   "scripts": {
