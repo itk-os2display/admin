@@ -13,10 +13,6 @@ _configurator:
 _main:
     resource: routing.yml
 
-_exchange:
-    resource: "@ItkExchangeBundle/Resources/config/routing_dev.yml"
-    prefix:   /
-
 _itk_aarhus_data:
     resource: "@ItkAarhusDataBundle/Resources/config/routing_dev.yml"
     prefix:   /
