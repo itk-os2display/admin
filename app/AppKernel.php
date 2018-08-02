@@ -38,6 +38,8 @@ class AppKernel extends Kernel
             new Os2Display\CampaignBundle\Os2DisplayCampaignBundle(),
 
             new AppBundle\AppBundle(),
+
+            new Os2Display\ScreenBundle\Os2DisplayScreenBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

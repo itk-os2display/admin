@@ -1,10 +1,11 @@
 {
-    "name": "troelsugiltjensen/admin",
-    "license": "proprietary",
+    "name": "os2display/admin",
+    "license": "GNU General Public License v3.0",
     "type": "project",
     "autoload": {
         "psr-4": {
-            "AppBundle\\": "src/AppBundle"
+            "AppBundle\\": "src/AppBundle",
+            "Os2Display\\ScreenBundle\\": "src/screen-bundle"
         },
         "classmap": [
             "app/AppKernel.php",
