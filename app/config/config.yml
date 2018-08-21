@@ -143,3 +143,9 @@ fos_rest:
             - { path: '^/', stop: true } # Available for version >= 1.5
 
 nelmio_api_doc: ~
+
+os2_display_core:
+    cache_ttl: 30
+
+os2_display_campaign:
+    cache_ttl: 30
