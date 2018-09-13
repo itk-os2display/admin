@@ -2988,12 +2988,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-os2display/screen-bundle.git",
-                "reference": "d1cb09244f8b5973d28a32e1d531b31e39654d68"
+                "reference": "48191de3e169546388f1d36fc9baec8b2b836b55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-os2display/screen-bundle/zipball/d1cb09244f8b5973d28a32e1d531b31e39654d68",
-                "reference": "d1cb09244f8b5973d28a32e1d531b31e39654d68",
+                "url": "https://api.github.com/repos/itk-os2display/screen-bundle/zipball/48191de3e169546388f1d36fc9baec8b2b836b55",
+                "reference": "48191de3e169546388f1d36fc9baec8b2b836b55",
                 "shasum": ""
             },
             "type": "symfony-bundle",
@@ -3010,7 +3010,7 @@
                 "source": "https://github.com/itk-os2display/screen-bundle/tree/develop",
                 "issues": "https://github.com/itk-os2display/screen-bundle/issues"
             },
-            "time": "2018-08-22T10:13:51+00:00"
+            "time": "2018-09-13T12:26:01+00:00"
         },
         {
             "name": "paragonie/random_compat",
