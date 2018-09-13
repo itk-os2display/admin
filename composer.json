@@ -4,8 +4,7 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "AppBundle\\": "src/AppBundle",
-            "Os2Display\\ScreenBundle\\": "src/screen-bundle"
+            "AppBundle\\": "src/AppBundle"
         },
         "classmap": [
             "app/AppKernel.php",
@@ -26,7 +25,8 @@
         "os2display/admin-bundle": "dev-pr-os2display-symf34",
         "os2display/core-bundle": "dev-pr-os2display-symf34",
         "os2display/default-template-bundle": "dev-pr-os2display-symf34",
-        "os2display/media-bundle": "dev-pr-os2display-symf34"
+        "os2display/media-bundle": "dev-pr-os2display-symf34",
+        "os2display/screen-bundle": "dev-develop"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
@@ -52,6 +52,10 @@
         "os2display/campaign-bundle": {
             "type": "vcs",
             "url": "https://github.com/itk-os2display/campaign-bundle"
+        },
+        "os2display/screen-bundle": {
+            "type": "vcs",
+            "url": "https://github.com/itk-os2display/screen-bundle"
         }
     },
     "scripts": {

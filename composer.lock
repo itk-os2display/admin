@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5c36326790e89b7d7b723a51004385d",
+    "content-hash": "3533078a8eeb873f97699db0557d0c65",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -2881,12 +2881,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-os2display/core-bundle.git",
-                "reference": "7c70876e0fbd95d39b8342b90390a2262614a1d4"
+                "reference": "02d78a3df234dc16689b7687fe1656e13e217844"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-os2display/core-bundle/zipball/7c70876e0fbd95d39b8342b90390a2262614a1d4",
-                "reference": "7c70876e0fbd95d39b8342b90390a2262614a1d4",
+                "url": "https://api.github.com/repos/itk-os2display/core-bundle/zipball/02d78a3df234dc16689b7687fe1656e13e217844",
+                "reference": "02d78a3df234dc16689b7687fe1656e13e217844",
                 "shasum": ""
             },
             "require": {
@@ -2925,7 +2925,7 @@
             "support": {
                 "source": "https://github.com/itk-os2display/core-bundle/tree/pr-os2display-symf34"
             },
-            "time": "2018-07-04T10:31:32+00:00"
+            "time": "2018-07-05T08:05:49+00:00"
         },
         {
             "name": "os2display/default-template-bundle",
@@ -2981,6 +2981,36 @@
                 "source": "https://github.com/itk-os2display/media-bundle/tree/symf4"
             },
             "time": "2018-06-13T17:38:49+00:00"
+        },
+        {
+            "name": "os2display/screen-bundle",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-os2display/screen-bundle.git",
+                "reference": "d1cb09244f8b5973d28a32e1d531b31e39654d68"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-os2display/screen-bundle/zipball/d1cb09244f8b5973d28a32e1d531b31e39654d68",
+                "reference": "d1cb09244f8b5973d28a32e1d531b31e39654d68",
+                "shasum": ""
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Os2Display\\ScreenBundle\\": ""
+                }
+            },
+            "license": [
+                "GNU General Public License v3.0"
+            ],
+            "description": "Os2Display screen",
+            "support": {
+                "source": "https://github.com/itk-os2display/screen-bundle/tree/develop",
+                "issues": "https://github.com/itk-os2display/screen-bundle/issues"
+            },
+            "time": "2018-08-22T10:13:51+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -4710,20 +4740,20 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v3.4.12",
+            "version": "v3.4.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "c36f8cb21b5f1661a14fdb8cef9cc611d54a3494"
+                "reference": "5bb5c2d4b0d5cf10672015b68519a199e6ac27c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/c36f8cb21b5f1661a14fdb8cef9cc611d54a3494",
-                "reference": "c36f8cb21b5f1661a14fdb8cef9cc611d54a3494",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/5bb5c2d4b0d5cf10672015b68519a199e6ac27c1",
+                "reference": "5bb5c2d4b0d5cf10672015b68519a199e6ac27c1",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": "~2.4@stable",
+                "doctrine/common": "~2.4",
                 "ext-xml": "*",
                 "fig/link-util": "^1.0",
                 "php": "^5.5.9|>=7.0.8",
@@ -4742,7 +4772,7 @@
             },
             "conflict": {
                 "phpdocumentor/reflection-docblock": "<3.0||>=3.2.0,<3.2.2",
-                "phpdocumentor/type-resolver": "<0.2.1",
+                "phpdocumentor/type-resolver": "<0.3.0",
                 "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0"
             },
             "provide": {
@@ -4861,7 +4891,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2018-06-25T12:29:33+00:00"
+            "time": "2018-08-28T06:06:28+00:00"
         },
         {
             "name": "twig/extensions",
@@ -5616,7 +5646,8 @@
         "os2display/admin-bundle": 20,
         "os2display/core-bundle": 20,
         "os2display/default-template-bundle": 20,
-        "os2display/media-bundle": 20
+        "os2display/media-bundle": 20,
+        "os2display/screen-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
