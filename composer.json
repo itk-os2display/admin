@@ -21,7 +21,7 @@
     },
     "require": {
         "php": ">=5.5.9",
-        "itk-os2display/campaign-bundle": "dev-pr-os2display-symf34",
+        "itk-os2display/campaign-bundle": "dev-feature/screen-bundle",
         "os2display/admin-bundle": "dev-feature/screen-bundle",
         "os2display/core-bundle": "dev-feature/screen-bundle",
         "os2display/default-template-bundle": "dev-pr-os2display-symf34",
@@ -29,7 +29,6 @@
         "os2display/screen-bundle": "dev-develop"
     },
     "require-dev": {
-        "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^3.0"
     },
     "repositories": {
