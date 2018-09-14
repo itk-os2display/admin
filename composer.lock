@@ -2881,12 +2881,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-os2display/core-bundle.git",
-                "reference": "222a945fc2052e84bf306f981969ac400798ecb7"
+                "reference": "e4d4bf3ec8bad333c09ee4ab8d2a86d9c689bb88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-os2display/core-bundle/zipball/222a945fc2052e84bf306f981969ac400798ecb7",
-                "reference": "222a945fc2052e84bf306f981969ac400798ecb7",
+                "url": "https://api.github.com/repos/itk-os2display/core-bundle/zipball/e4d4bf3ec8bad333c09ee4ab8d2a86d9c689bb88",
+                "reference": "e4d4bf3ec8bad333c09ee4ab8d2a86d9c689bb88",
                 "shasum": ""
             },
             "require": {
@@ -2926,7 +2926,7 @@
             "support": {
                 "source": "https://github.com/itk-os2display/core-bundle/tree/feature/screen-bundle"
             },
-            "time": "2018-09-14T11:09:34+00:00"
+            "time": "2018-09-14T11:17:29+00:00"
         },
         {
             "name": "os2display/default-template-bundle",
