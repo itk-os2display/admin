@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3533078a8eeb873f97699db0557d0c65",
+    "content-hash": "33ecf852d148b3eb714f39968d3addf0",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -2848,16 +2848,16 @@
         },
         {
             "name": "os2display/admin-bundle",
-            "version": "dev-pr-os2display-symf34",
+            "version": "dev-feature/screen-bundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-os2display/admin-bundle.git",
-                "reference": "b21e090ff7ee15eedf71b48cc2c9f01a42a02888"
+                "reference": "19be54d651bfaa9846e2e5dbdf567f4c495a09e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-os2display/admin-bundle/zipball/b21e090ff7ee15eedf71b48cc2c9f01a42a02888",
-                "reference": "b21e090ff7ee15eedf71b48cc2c9f01a42a02888",
+                "url": "https://api.github.com/repos/itk-os2display/admin-bundle/zipball/19be54d651bfaa9846e2e5dbdf567f4c495a09e2",
+                "reference": "19be54d651bfaa9846e2e5dbdf567f4c495a09e2",
                 "shasum": ""
             },
             "require": {
@@ -2871,22 +2871,22 @@
             },
             "description": "Os2Display admin",
             "support": {
-                "source": "https://github.com/itk-os2display/admin-bundle/tree/symf34"
+                "source": "https://github.com/itk-os2display/admin-bundle/tree/feature/screen-bundle"
             },
-            "time": "2018-06-25T07:35:31+00:00"
+            "time": "2018-08-22T07:30:48+00:00"
         },
         {
             "name": "os2display/core-bundle",
-            "version": "dev-pr-os2display-symf34",
+            "version": "dev-feature/screen-bundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-os2display/core-bundle.git",
-                "reference": "02d78a3df234dc16689b7687fe1656e13e217844"
+                "reference": "e8f402c1864549de45f99ae50043e10b60be54fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-os2display/core-bundle/zipball/02d78a3df234dc16689b7687fe1656e13e217844",
-                "reference": "02d78a3df234dc16689b7687fe1656e13e217844",
+                "url": "https://api.github.com/repos/itk-os2display/core-bundle/zipball/e8f402c1864549de45f99ae50043e10b60be54fc",
+                "reference": "e8f402c1864549de45f99ae50043e10b60be54fc",
                 "shasum": ""
             },
             "require": {
@@ -2923,9 +2923,9 @@
             },
             "description": "Os2Display core",
             "support": {
-                "source": "https://github.com/itk-os2display/core-bundle/tree/pr-os2display-symf34"
+                "source": "https://github.com/itk-os2display/core-bundle/tree/feature/screen-bundle"
             },
-            "time": "2018-07-05T08:05:49+00:00"
+            "time": "2018-09-14T10:28:40+00:00"
         },
         {
             "name": "os2display/default-template-bundle",
